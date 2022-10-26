@@ -27,6 +27,7 @@ Partial Class FenetrePrincipale
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Ytfin = New System.Windows.Forms.NumericUpDown()
+        Me.nbSegements = New System.Windows.Forms.NumericUpDown()
         Me.Xtfin = New System.Windows.Forms.NumericUpDown()
         Me.Yfin = New System.Windows.Forms.NumericUpDown()
         Me.Xtdeb = New System.Windows.Forms.NumericUpDown()
@@ -39,17 +40,17 @@ Partial Class FenetrePrincipale
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.pointData = New System.Windows.Forms.ListBox()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
-        Me.Label10 = New System.Windows.Forms.Label()
         CType(Me.plan, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.Ytfin, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nbSegements, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Xtfin, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Yfin, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Xtdeb, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -57,7 +58,6 @@ Partial Class FenetrePrincipale
         CType(Me.Xfin, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Ydeb, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Xdeb, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'plan
@@ -84,7 +84,7 @@ Partial Class FenetrePrincipale
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.Ytfin)
-        Me.GroupBox1.Controls.Add(Me.NumericUpDown1)
+        Me.GroupBox1.Controls.Add(Me.nbSegements)
         Me.GroupBox1.Controls.Add(Me.Xtfin)
         Me.GroupBox1.Controls.Add(Me.Yfin)
         Me.GroupBox1.Controls.Add(Me.Xtdeb)
@@ -121,6 +121,16 @@ Partial Class FenetrePrincipale
         Me.Ytfin.Name = "Ytfin"
         Me.Ytfin.Size = New System.Drawing.Size(99, 20)
         Me.Ytfin.TabIndex = 24
+        '
+        'nbSegements
+        '
+        Me.nbSegements.Location = New System.Drawing.Point(159, 141)
+        Me.nbSegements.Maximum = New Decimal(New Integer() {100000, 0, 0, 0})
+        Me.nbSegements.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.nbSegements.Name = "nbSegements"
+        Me.nbSegements.Size = New System.Drawing.Size(161, 20)
+        Me.nbSegements.TabIndex = 23
+        Me.nbSegements.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'Xtfin
         '
@@ -244,6 +254,15 @@ Partial Class FenetrePrincipale
         Me.Label4.TabIndex = 7
         Me.Label4.Text = "Ytfin"
         '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(34, 143)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(119, 13)
+        Me.Label10.TabIndex = 8
+        Me.Label10.Text = "Nombre de segements :"
+        '
         'Label5
         '
         Me.Label5.AutoSize = True
@@ -297,26 +316,6 @@ Partial Class FenetrePrincipale
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "Xdeb"
         '
-        'NumericUpDown1
-        '
-        Me.NumericUpDown1.DecimalPlaces = 2
-        Me.NumericUpDown1.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.NumericUpDown1.Location = New System.Drawing.Point(159, 141)
-        Me.NumericUpDown1.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.NumericUpDown1.Minimum = New Decimal(New Integer() {1, 0, 0, -2147483648})
-        Me.NumericUpDown1.Name = "NumericUpDown1"
-        Me.NumericUpDown1.Size = New System.Drawing.Size(161, 20)
-        Me.NumericUpDown1.TabIndex = 23
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(34, 143)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(119, 13)
-        Me.Label10.TabIndex = 8
-        Me.Label10.Text = "Nombre de segements :"
-        '
         'FenetrePrincipale
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -331,6 +330,7 @@ Partial Class FenetrePrincipale
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.Ytfin, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nbSegements, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Xtfin, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Yfin, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Xtdeb, System.ComponentModel.ISupportInitialize).EndInit()
@@ -338,7 +338,6 @@ Partial Class FenetrePrincipale
         CType(Me.Xfin, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Ydeb, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Xdeb, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -366,6 +365,6 @@ Partial Class FenetrePrincipale
     Friend WithEvents Xfin As NumericUpDown
     Friend WithEvents Ydeb As NumericUpDown
     Friend WithEvents Xdeb As NumericUpDown
-    Friend WithEvents NumericUpDown1 As NumericUpDown
+    Friend WithEvents nbSegements As NumericUpDown
     Friend WithEvents Label10 As Label
 End Class
