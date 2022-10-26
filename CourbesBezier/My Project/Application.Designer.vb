@@ -32,7 +32,7 @@ Namespace My
 
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()> _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.CourbesBezier.Form1
+            Me.MainForm = Global.CourbesBezier.FenetrePrincipale
         End Sub
     End Class
 End Namespace
