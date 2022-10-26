@@ -22,10 +22,12 @@ Partial Class FenetrePrincipale
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FenetrePrincipale))
         Me.plan = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.pointData = New System.Windows.Forms.ListBox()
         Me.Ytfin = New System.Windows.Forms.NumericUpDown()
         Me.nbSegements = New System.Windows.Forms.NumericUpDown()
         Me.Xtfin = New System.Windows.Forms.NumericUpDown()
@@ -42,11 +44,12 @@ Partial Class FenetrePrincipale
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.pointData = New System.Windows.Forms.ListBox()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.modifierButton = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.CourbeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.plan, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.Ytfin, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -58,6 +61,7 @@ Partial Class FenetrePrincipale
         CType(Me.Xfin, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Ydeb, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Xdeb, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CourbeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'plan
@@ -83,6 +87,7 @@ Partial Class FenetrePrincipale
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.pointData)
         Me.GroupBox1.Controls.Add(Me.Ytfin)
         Me.GroupBox1.Controls.Add(Me.nbSegements)
         Me.GroupBox1.Controls.Add(Me.Xtfin)
@@ -99,8 +104,8 @@ Partial Class FenetrePrincipale
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.Label10)
         Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.Controls.Add(Me.pointData)
         Me.GroupBox1.Controls.Add(Me.Button2)
+        Me.GroupBox1.Controls.Add(Me.modifierButton)
         Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label2)
@@ -110,6 +115,14 @@ Partial Class FenetrePrincipale
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Coordonées"
+        '
+        'pointData
+        '
+        Me.pointData.FormattingEnabled = True
+        Me.pointData.Location = New System.Drawing.Point(33, 206)
+        Me.pointData.Name = "pointData"
+        Me.pointData.Size = New System.Drawing.Size(287, 121)
+        Me.pointData.TabIndex = 25
         '
         'Ytfin
         '
@@ -272,28 +285,30 @@ Partial Class FenetrePrincipale
         Me.Label5.TabIndex = 8
         Me.Label5.Text = "Xtfin"
         '
-        'pointData
-        '
-        Me.pointData.FormattingEnabled = True
-        Me.pointData.Location = New System.Drawing.Point(33, 206)
-        Me.pointData.Name = "pointData"
-        Me.pointData.Size = New System.Drawing.Size(290, 108)
-        Me.pointData.TabIndex = 4
-        '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(189, 177)
+        Me.Button2.Location = New System.Drawing.Point(227, 177)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(134, 23)
+        Me.Button2.Size = New System.Drawing.Size(96, 23)
         Me.Button2.TabIndex = 4
         Me.Button2.Text = "Supprimer"
         Me.Button2.UseVisualStyleBackColor = True
+        '
+        'modifierButton
+        '
+        Me.modifierButton.Location = New System.Drawing.Point(130, 177)
+        Me.modifierButton.Name = "modifierButton"
+        Me.modifierButton.Size = New System.Drawing.Size(96, 23)
+        Me.modifierButton.TabIndex = 4
+        Me.modifierButton.Text = "Modifier"
+        Me.modifierButton.UseVisualStyleBackColor = True
+        Me.modifierButton.Visible = False
         '
         'Button1
         '
         Me.Button1.Location = New System.Drawing.Point(33, 177)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(134, 23)
+        Me.Button1.Size = New System.Drawing.Size(96, 23)
         Me.Button1.TabIndex = 4
         Me.Button1.Text = "Ajouter"
         Me.Button1.UseVisualStyleBackColor = True
@@ -315,6 +330,10 @@ Partial Class FenetrePrincipale
         Me.Label2.Size = New System.Drawing.Size(32, 13)
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "Xdeb"
+        '
+        'CourbeBindingSource
+        '
+        Me.CourbeBindingSource.DataSource = GetType(CourbesBezier.Courbe)
         '
         'FenetrePrincipale
         '
@@ -338,6 +357,7 @@ Partial Class FenetrePrincipale
         CType(Me.Xfin, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Ydeb, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Xdeb, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CourbeBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -356,7 +376,6 @@ Partial Class FenetrePrincipale
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Button2 As Button
-    Friend WithEvents pointData As ListBox
     Friend WithEvents Ytfin As NumericUpDown
     Friend WithEvents Xtfin As NumericUpDown
     Friend WithEvents Yfin As NumericUpDown
@@ -367,4 +386,7 @@ Partial Class FenetrePrincipale
     Friend WithEvents Xdeb As NumericUpDown
     Friend WithEvents nbSegements As NumericUpDown
     Friend WithEvents Label10 As Label
+    Friend WithEvents modifierButton As Button
+    Friend WithEvents CourbeBindingSource As BindingSource
+    Friend WithEvents pointData As ListBox
 End Class

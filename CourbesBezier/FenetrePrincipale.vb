@@ -47,7 +47,7 @@ Public Class FenetrePrincipale
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click, modifierButton.Click
 
         myCourbe = New Courbe
 
@@ -67,12 +67,11 @@ Public Class FenetrePrincipale
         Ytdeb.Value = 0.78
         Xtfin.Value = -0.15
         Ytfin.Value = 0.06
+        nbSegements.Value = 100
 
 
-        pointData.Items.Add("Pdéb : " + "[" + Xdeb.Value.ToString + ";" + Ydeb.Value.ToString + "]")
-        pointData.Items.Add("Pfin : " + "[" + Xfin.Value.ToString + ";" + Yfin.Value.ToString + "]")
-        pointData.Items.Add("Ptdéb : " + "[" + Xtdeb.Value.ToString + ";" + Ytdeb.Value.ToString + "]")
-        pointData.Items.Add("Ptfin : " + "[" + Xtfin.Value.ToString + ";" + Ytfin.Value.ToString + "]")
+        pointData.Items.Add("[" + Xdeb.Value.ToString + ";" + Ydeb.Value.ToString + "]" + "[" + Xfin.Value.ToString + ";" + Yfin.Value.ToString + "]" + "[" + Xtdeb.Value.ToString + ";" + Ytdeb.Value.ToString + "]" + "[" + Xtfin.Value.ToString + ";" + Ytfin.Value.ToString + "]")
+
 
         myCourbe.points(0, 0) = Xdeb.Value
         myCourbe.points(0, 1) = Ydeb.Value
@@ -147,5 +146,32 @@ Public Class FenetrePrincipale
         DoubleBuffered = True
         SetStyle(ControlStyles.AllPaintingInWmPaint, True)
         SetStyle(ControlStyles.OptimizedDoubleBuffer, True)
+    End Sub
+
+
+    Private Sub pointData_SelectedIndexChanged(sender As Object, e As EventArgs) Handles pointData.SelectedIndexChanged
+
+        Dim myListBox As ListBox
+        Dim myPoints As String
+
+        myListBox = sender
+
+        myPoints = myListBox.SelectedItem.ToString().Split("[")(1)
+
+        Xdeb.Value = Decimal.Parse(myListBox.SelectedItem.ToString().Split("[")(1).Split(";")(0))
+        Ydeb.Value = Decimal.Parse(myListBox.SelectedItem.ToString().Split("[")(1).Split(";")(1).Replace("]", ""))
+        Xfin.Value = Decimal.Parse(myListBox.SelectedItem.ToString().Split("[")(2).Split(";")(0))
+        Yfin.Value = Decimal.Parse(myListBox.SelectedItem.ToString().Split("[")(2).Split(";")(1).Replace("]", ""))
+        Xtdeb.Value = Decimal.Parse(myListBox.SelectedItem.ToString().Split("[")(3).Split(";")(0))
+        Ytdeb.Value = Decimal.Parse(myListBox.SelectedItem.ToString().Split("[")(3).Split(";")(1).Replace("]", ""))
+        Xtfin.Value = Decimal.Parse(myListBox.SelectedItem.ToString().Split("[")(4).Split(";")(0))
+        Ytfin.Value = Decimal.Parse(myListBox.SelectedItem.ToString().Split("[")(4).Split(";")(1).Replace("]", ""))
+
+        modifierButton.Visible = True
+
+    End Sub
+
+    Private Sub modifierButton_Click(sender As Object, e As EventArgs) Handles modifierButton.Click
+
     End Sub
 End Class
