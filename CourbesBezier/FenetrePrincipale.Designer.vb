@@ -44,9 +44,9 @@ Partial Class FenetrePrincipale
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.modifierButton = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.supprimer = New System.Windows.Forms.Button()
+        Me.modifier = New System.Windows.Forms.Button()
+        Me.ajouter = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.CourbeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -104,9 +104,9 @@ Partial Class FenetrePrincipale
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.Label10)
         Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.Controls.Add(Me.Button2)
-        Me.GroupBox1.Controls.Add(Me.modifierButton)
-        Me.GroupBox1.Controls.Add(Me.Button1)
+        Me.GroupBox1.Controls.Add(Me.supprimer)
+        Me.GroupBox1.Controls.Add(Me.modifier)
+        Me.GroupBox1.Controls.Add(Me.ajouter)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Location = New System.Drawing.Point(429, 32)
@@ -285,33 +285,34 @@ Partial Class FenetrePrincipale
         Me.Label5.TabIndex = 8
         Me.Label5.Text = "Xtfin"
         '
-        'Button2
+        'supprimer
         '
-        Me.Button2.Location = New System.Drawing.Point(227, 177)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(96, 23)
-        Me.Button2.TabIndex = 4
-        Me.Button2.Text = "Supprimer"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.supprimer.Location = New System.Drawing.Point(227, 177)
+        Me.supprimer.Name = "supprimer"
+        Me.supprimer.Size = New System.Drawing.Size(96, 23)
+        Me.supprimer.TabIndex = 4
+        Me.supprimer.Text = "Supprimer"
+        Me.supprimer.UseVisualStyleBackColor = True
+        Me.supprimer.Visible = False
         '
-        'modifierButton
+        'modifier
         '
-        Me.modifierButton.Location = New System.Drawing.Point(130, 177)
-        Me.modifierButton.Name = "modifierButton"
-        Me.modifierButton.Size = New System.Drawing.Size(96, 23)
-        Me.modifierButton.TabIndex = 4
-        Me.modifierButton.Text = "Modifier"
-        Me.modifierButton.UseVisualStyleBackColor = True
-        Me.modifierButton.Visible = False
+        Me.modifier.Location = New System.Drawing.Point(130, 177)
+        Me.modifier.Name = "modifier"
+        Me.modifier.Size = New System.Drawing.Size(96, 23)
+        Me.modifier.TabIndex = 4
+        Me.modifier.Text = "Modifier"
+        Me.modifier.UseVisualStyleBackColor = True
+        Me.modifier.Visible = False
         '
-        'Button1
+        'ajouter
         '
-        Me.Button1.Location = New System.Drawing.Point(33, 177)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(96, 23)
-        Me.Button1.TabIndex = 4
-        Me.Button1.Text = "Ajouter"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.ajouter.Location = New System.Drawing.Point(33, 177)
+        Me.ajouter.Name = "ajouter"
+        Me.ajouter.Size = New System.Drawing.Size(96, 23)
+        Me.ajouter.TabIndex = 4
+        Me.ajouter.Text = "Ajouter"
+        Me.ajouter.UseVisualStyleBackColor = True
         '
         'Label3
         '
@@ -368,14 +369,14 @@ Partial Class FenetrePrincipale
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents ajouter As Button
     Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents Button2 As Button
+    Friend WithEvents supprimer As Button
     Friend WithEvents Ytfin As NumericUpDown
     Friend WithEvents Xtfin As NumericUpDown
     Friend WithEvents Yfin As NumericUpDown
@@ -386,7 +387,7 @@ Partial Class FenetrePrincipale
     Friend WithEvents Xdeb As NumericUpDown
     Friend WithEvents nbSegements As NumericUpDown
     Friend WithEvents Label10 As Label
-    Friend WithEvents modifierButton As Button
+    Friend WithEvents modifier As Button
     Friend WithEvents CourbeBindingSource As BindingSource
     Friend WithEvents pointData As ListBox
 End Class

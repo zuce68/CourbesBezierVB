@@ -19,4 +19,20 @@
 
     End Property
 
+    Public Property myPoints As String
+
+        Get
+
+            Return "[" + points(0, 0).ToString + ";" + points(0, 1).ToString + "]" + "[" + points(1, 0).ToString + ";" + points(1, 1).ToString + "]" + "[" + points(2, 0).ToString + ";" + points(2, 1).ToString + "]" + "[" + points(3, 0).ToString + ";" + points(3, 1).ToString + "]"
+
+        End Get
+
+        Set
+
+        End Set
+
+
+    End Property
+
+
 End Class
