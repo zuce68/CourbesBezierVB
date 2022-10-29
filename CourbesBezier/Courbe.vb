@@ -1,6 +1,7 @@
 ﻿Public Class Courbe
     Public points(4, 2) As Decimal
     Private nbSegement As Integer
+    Private color As Color
 
     Public Property segmentDefine As Integer
 
@@ -13,7 +14,21 @@
         Set(ByVal segement As Integer)
 
             nbSegement = segement
-            'RaiseEvent INotifyPropertyChanged_PropertyChanged(Me, New PropertyChangedEventArgs("Operation"))'
+
+        End Set
+
+    End Property
+    Public Property colorDefine As Color
+
+        Get
+
+            Return color
+
+        End Get
+
+        Set(ByVal newColor As Color)
+
+            color = newColor
 
         End Set
 

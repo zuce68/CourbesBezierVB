@@ -71,10 +71,7 @@ Public Class FenetrePrincipale
             Dim th As Double
             Dim nx, ny As Integer
             Dim pic As Bitmap = New System.Drawing.Bitmap(1000, 1000)
-            Dim circleColor As New Color
             Dim x1, y1, r1, r2 As Integer
-
-            circleColor = randomColor()
 
             For Index As Integer = 0 To 3 Step 1
 
@@ -88,20 +85,20 @@ Public Class FenetrePrincipale
                 For th = 0 To 360 Step 0.5
                     nx = x1 + r1 * Cos(th * 22 / 7 / 180)
                     ny = y1 + r2 * Sin(th * 22 / 7 / 180)
-                    pic.SetPixel(nx, ny, circleColor)
+                    pic.SetPixel(nx, ny, myCourbe.colorDefine)
                     plan.Image = pic
                 Next th
             Next
 
 
 
-            Dim xt(nbSegements.Value * 2), yt(nbSegements.Value * 2) As Decimal
+            Dim xt(myCourbe.segmentDefine * 2), yt(myCourbe.segmentDefine * 2) As Decimal
             Dim pointeur As Integer
             pointeur = 0
             r1 = 1
             r2 = 1
 
-            For t = 0 To 1 Step (1 / nbSegements.Value)
+            For t = 0 To 1 Step (1 / myCourbe.segmentDefine)
                 xt(pointeur) = ((1 - t) ^ 3) * myCourbe.points(0, 0) + 3 * t * ((1 - t) ^ 2) * myCourbe.points(2, 0) + 3 * (t ^ 2) * (1 - t) * myCourbe.points(3, 0) + (t ^ 3) * myCourbe.points(1, 0)
                 yt(pointeur) = ((1 - t) ^ 3) * myCourbe.points(0, 1) + 3 * t * ((1 - t) ^ 2) * myCourbe.points(2, 1) + 3 * (t ^ 2) * (1 - t) * myCourbe.points(3, 1) + (t ^ 3) * myCourbe.points(1, 1)
 
@@ -111,7 +108,7 @@ Public Class FenetrePrincipale
                 For th = 0 To 360 Step 0.5
                     nx = x1 + r1 * Cos(th * 22 / 7 / 180)
                     ny = y1 + r2 * Sin(th * 22 / 7 / 180)
-                    pic.SetPixel(nx, ny, circleColor)
+                    pic.SetPixel(nx, ny, myCourbe.colorDefine)
                     plan.Image = pic
                 Next th
 
@@ -151,6 +148,8 @@ Public Class FenetrePrincipale
         myCourbe.segmentDefine = nbSegements.Value
 
         pointData.Items.Add(myCourbe)
+
+        myCourbe.colorDefine = randomColor()
 
         Afficher(myCourbe)
 
