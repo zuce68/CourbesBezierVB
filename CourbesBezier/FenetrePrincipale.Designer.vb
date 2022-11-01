@@ -27,6 +27,14 @@ Partial Class FenetrePrincipale
         Me.plan = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btnTfin = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.btnTdeb = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.btnFin = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.btnDeb = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.pointData = New System.Windows.Forms.ListView()
         Me.Ytfin = New System.Windows.Forms.NumericUpDown()
         Me.nbSegements = New System.Windows.Forms.NumericUpDown()
@@ -50,14 +58,6 @@ Partial Class FenetrePrincipale
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.CourbeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.btnDeb = New System.Windows.Forms.Button()
-        Me.btnFin = New System.Windows.Forms.Button()
-        Me.btnTdeb = New System.Windows.Forms.Button()
-        Me.btnTfin = New System.Windows.Forms.Button()
         CType(Me.plan, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.Ytfin, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -131,6 +131,78 @@ Partial Class FenetrePrincipale
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Coordonées"
+        '
+        'btnTfin
+        '
+        Me.btnTfin.Location = New System.Drawing.Point(326, 94)
+        Me.btnTfin.Name = "btnTfin"
+        Me.btnTfin.Size = New System.Drawing.Size(75, 23)
+        Me.btnTfin.TabIndex = 25
+        Me.btnTfin.Text = "TFin"
+        Me.btnTfin.UseVisualStyleBackColor = True
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(326, 97)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(75, 23)
+        Me.Button4.TabIndex = 25
+        Me.Button4.Text = "Button1"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'btnTdeb
+        '
+        Me.btnTdeb.Location = New System.Drawing.Point(326, 68)
+        Me.btnTdeb.Name = "btnTdeb"
+        Me.btnTdeb.Size = New System.Drawing.Size(75, 23)
+        Me.btnTdeb.TabIndex = 25
+        Me.btnTdeb.Text = "TDébut"
+        Me.btnTdeb.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(326, 72)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(75, 23)
+        Me.Button3.TabIndex = 25
+        Me.Button3.Text = "Button1"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'btnFin
+        '
+        Me.btnFin.Location = New System.Drawing.Point(326, 42)
+        Me.btnFin.Name = "btnFin"
+        Me.btnFin.Size = New System.Drawing.Size(75, 23)
+        Me.btnFin.TabIndex = 25
+        Me.btnFin.Text = "Fin"
+        Me.btnFin.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(326, 45)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 25
+        Me.Button2.Text = "Button1"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'btnDeb
+        '
+        Me.btnDeb.Location = New System.Drawing.Point(326, 16)
+        Me.btnDeb.Name = "btnDeb"
+        Me.btnDeb.Size = New System.Drawing.Size(75, 23)
+        Me.btnDeb.TabIndex = 25
+        Me.btnDeb.Text = "Début"
+        Me.btnDeb.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(326, 17)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 25
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'pointData
         '
@@ -352,78 +424,6 @@ Partial Class FenetrePrincipale
         'CourbeBindingSource
         '
         Me.CourbeBindingSource.DataSource = GetType(CourbesBezier.Courbe)
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(326, 17)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 25
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(326, 45)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 25
-        Me.Button2.Text = "Button1"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(326, 72)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
-        Me.Button3.TabIndex = 25
-        Me.Button3.Text = "Button1"
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'Button4
-        '
-        Me.Button4.Location = New System.Drawing.Point(326, 97)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(75, 23)
-        Me.Button4.TabIndex = 25
-        Me.Button4.Text = "Button1"
-        Me.Button4.UseVisualStyleBackColor = True
-        '
-        'btnDeb
-        '
-        Me.btnDeb.Location = New System.Drawing.Point(326, 16)
-        Me.btnDeb.Name = "btnDeb"
-        Me.btnDeb.Size = New System.Drawing.Size(75, 23)
-        Me.btnDeb.TabIndex = 25
-        Me.btnDeb.Text = "Début"
-        Me.btnDeb.UseVisualStyleBackColor = True
-        '
-        'btnFin
-        '
-        Me.btnFin.Location = New System.Drawing.Point(326, 42)
-        Me.btnFin.Name = "btnFin"
-        Me.btnFin.Size = New System.Drawing.Size(75, 23)
-        Me.btnFin.TabIndex = 25
-        Me.btnFin.Text = "Fin"
-        Me.btnFin.UseVisualStyleBackColor = True
-        '
-        'btnTdeb
-        '
-        Me.btnTdeb.Location = New System.Drawing.Point(326, 68)
-        Me.btnTdeb.Name = "btnTdeb"
-        Me.btnTdeb.Size = New System.Drawing.Size(75, 23)
-        Me.btnTdeb.TabIndex = 25
-        Me.btnTdeb.Text = "TDébut"
-        Me.btnTdeb.UseVisualStyleBackColor = True
-        '
-        'btnTfin
-        '
-        Me.btnTfin.Location = New System.Drawing.Point(326, 94)
-        Me.btnTfin.Name = "btnTfin"
-        Me.btnTfin.Size = New System.Drawing.Size(75, 23)
-        Me.btnTfin.TabIndex = 25
-        Me.btnTfin.Text = "TFin"
-        Me.btnTfin.UseVisualStyleBackColor = True
         '
         'FenetrePrincipale
         '

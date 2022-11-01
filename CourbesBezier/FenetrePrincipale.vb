@@ -14,18 +14,22 @@ Public Class FenetrePrincipale
         If deb = True Then
             Xdeb.Value = ((em.X - 204) * 0.2) / 39
             Ydeb.Value = -(((em.Y - 202) * 0.2) / 39)
+            modifier.PerformClick()
         End If
         If fin = True Then
             Xfin.Value = ((em.X - 204) * 0.2) / 39
             Yfin.Value = -(((em.Y - 202) * 0.2) / 39)
+            modifier.PerformClick()
         End If
         If tdeb = True Then
             Xtdeb.Value = ((em.X - 204) * 0.2) / 39
             Ytdeb.Value = -(((em.Y - 202) * 0.2) / 39)
+            modifier.PerformClick()
         End If
         If tfin = True Then
             Xtfin.Value = ((em.X - 204) * 0.2) / 39
             Ytfin.Value = -(((em.Y - 202) * 0.2) / 39)
+            modifier.PerformClick()
         End If
 
         deb = False
@@ -178,6 +182,8 @@ Public Class FenetrePrincipale
         myItem.Text = myCourbe.myPoints
         myItem.Tag = myCourbe
         myItem.BackColor = myCourbe.colorDefine
+        myItem.EnsureVisible()
+
 
 
 
@@ -211,6 +217,10 @@ Public Class FenetrePrincipale
 
     Private Sub btnTfin_Click(sender As Object, e As EventArgs) Handles btnTfin.Click
         tfin = True
+    End Sub
+
+    Private Sub NUD_ValueChanged(sender As Object, e As EventArgs) Handles Xdeb.ValueChanged, Xfin.ValueChanged, Ydeb.ValueChanged, Yfin.ValueChanged, Xtdeb.ValueChanged, Xtfin.ValueChanged, Ytdeb.ValueChanged, Ytfin.ValueChanged
+        modifier.PerformClick()
     End Sub
 
     Private Sub pointData_SelectedIndexChanged(sender As Object, e As EventArgs) Handles pointData.ItemSelectionChanged
