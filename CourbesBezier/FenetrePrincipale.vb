@@ -4,11 +4,34 @@
 Public Class FenetrePrincipale
 
     Dim index As Integer
+    Dim deb, fin, tdeb, tfin As Boolean
+
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles plan.Click
         Dim em As MouseEventArgs
         em = e
+        Dim x, y As Decimal
 
-        MessageBox.Show(em.X.ToString + ";" + em.Y.ToString)
+        If deb = True Then
+            Xdeb.Value = ((em.X - 204) * 0.2) / 39
+            Ydeb.Value = -(((em.Y - 202) * 0.2) / 39)
+        End If
+        If fin = True Then
+            Xfin.Value = ((em.X - 204) * 0.2) / 39
+            Yfin.Value = -(((em.Y - 202) * 0.2) / 39)
+        End If
+        If tdeb = True Then
+            Xtdeb.Value = ((em.X - 204) * 0.2) / 39
+            Ytdeb.Value = -(((em.Y - 202) * 0.2) / 39)
+        End If
+        If tfin = True Then
+            Xtfin.Value = ((em.X - 204) * 0.2) / 39
+            Ytfin.Value = -(((em.Y - 202) * 0.2) / 39)
+        End If
+
+        deb = False
+        fin = False
+        tdeb = False
+        tfin = False
     End Sub
 
     Private Sub plan_Paint(sender As Object, e As System.Windows.Forms.PaintEventArgs) Handles plan.Paint
@@ -50,18 +73,19 @@ Public Class FenetrePrincipale
     Private Sub Modifier_Click(sender As Object, e As EventArgs) Handles modifier.Click
         If index <> -1 Then
             'pointData.Items.Item(index) = "[" + Xdeb.Value.ToString + ";" + Ydeb.Value.ToString + "]" + "[" + Xfin.Value.ToString + ";" + Yfin.Value.ToString + "]" + "[" + Xtdeb.Value.ToString + ";" + Ytdeb.Value.ToString + "]" + "[" + Xtfin.Value.ToString + ";" + Ytfin.Value.ToString + "]"
+            Dim myItem = pointData.Items.Item(index)
+            myItem.Tag.points(0, 0) = Xdeb.Value
+            myItem.Tag.points(0, 1) = Ydeb.Value
+            myItem.Tag.points(1, 0) = Xfin.Value
+            myItem.Tag.points(1, 1) = Yfin.Value
+            myItem.Tag.points(2, 0) = Xtdeb.Value
+            myItem.Tag.points(2, 1) = Ytdeb.Value
+            myItem.Tag.points(3, 0) = Xtfin.Value
+            myItem.Tag.points(3, 1) = Ytfin.Value
+            myItem.Tag.segmentDefine = nbSegements.Value
 
-            pointData.Items.Item(index).points(0, 0) = Xdeb.Value
-            pointData.Items.Item(index).points(0, 1) = Ydeb.Value
-            pointData.Items.Item(index).points(1, 0) = Xfin.Value
-            pointData.Items.Item(index).points(1, 1) = Yfin.Value
-            pointData.Items.Item(index).points(2, 0) = Xtdeb.Value
-            pointData.Items.Item(index).points(2, 1) = Ytdeb.Value
-            pointData.Items.Item(index).points(3, 0) = Xtfin.Value
-            pointData.Items.Item(index).points(3, 1) = Ytfin.Value
-            pointData.Items.Item(index).segmentDefine = nbSegements.Value
+            Afficher(myItem.Tag)
 
-            Afficher(pointData.Items.Item(index))
         End If
     End Sub
 
@@ -147,9 +171,18 @@ Public Class FenetrePrincipale
         myCourbe.points(3, 1) = Ytfin.Value
         myCourbe.segmentDefine = nbSegements.Value
 
-        pointData.Items.Add(myCourbe)
-
         myCourbe.colorDefine = randomColor()
+
+        Dim myItem = New ListViewItem
+
+        myItem.Text = myCourbe.myPoints
+        myItem.Tag = myCourbe
+        myItem.BackColor = myCourbe.colorDefine
+
+
+
+        pointData.Items.Add(myItem)
+
 
         Afficher(myCourbe)
 
@@ -168,26 +201,40 @@ Public Class FenetrePrincipale
         SetStyle(ControlStyles.OptimizedDoubleBuffer, True)
     End Sub
 
+    Private Sub btnFin_Click(sender As Object, e As EventArgs) Handles btnFin.Click
+        fin = True
+    End Sub
 
-    Private Sub pointData_SelectedIndexChanged(sender As Object, e As EventArgs) Handles pointData.SelectedIndexChanged
-        If sender.SelectedItem IsNot Nothing Then
-            Afficher(sender.SelectedItem)
+    Private Sub btnTdeb_Click(sender As Object, e As EventArgs) Handles btnTdeb.Click
+        tdeb = True
+    End Sub
 
-            Xdeb.Value = sender.SelectedItem.points(0, 0)
-            Ydeb.Value = sender.SelectedItem.points(0, 1)
-            Xfin.Value = sender.SelectedItem.points(1, 0)
-            Yfin.Value = sender.SelectedItem.points(1, 1)
-            Xtdeb.Value = sender.SelectedItem.points(2, 0)
-            Ytdeb.Value = sender.SelectedItem.points(2, 1)
-            Xtfin.Value = sender.SelectedItem.points(3, 0)
-            Ytfin.Value = sender.SelectedItem.points(3, 1)
-            nbSegements.Value = sender.SelectedItem.segmentDefine
+    Private Sub btnTfin_Click(sender As Object, e As EventArgs) Handles btnTfin.Click
+        tfin = True
+    End Sub
 
-            index = sender.SelectedIndex
+    Private Sub pointData_SelectedIndexChanged(sender As Object, e As EventArgs) Handles pointData.ItemSelectionChanged
 
-            modifier.Visible = True
-            supprimer.Visible = True
-        End If
+        Dim myItem As ListViewItem
+
+        myItem = sender.FocusedItem
+
+        Afficher(myItem.Tag)
+
+        Xdeb.Value = myItem.Tag.points(0, 0)
+        Ydeb.Value = myItem.Tag.points(0, 1)
+        Xfin.Value = myItem.Tag.points(1, 0)
+        Yfin.Value = myItem.Tag.points(1, 1)
+        Xtdeb.Value = myItem.Tag.points(2, 0)
+        Ytdeb.Value = myItem.Tag.points(2, 1)
+        Xtfin.Value = myItem.Tag.points(3, 0)
+        Ytfin.Value = myItem.Tag.points(3, 1)
+        nbSegements.Value = myItem.Tag.segmentDefine
+
+        index = myItem.Index
+
+        modifier.Visible = True
+        supprimer.Visible = True
     End Sub
 
     Private Sub Supprimer_Click(sender As Object, e As EventArgs) Handles supprimer.Click
@@ -196,5 +243,9 @@ Public Class FenetrePrincipale
             pointData.Items.RemoveAt(index)
 
         End If
+    End Sub
+
+    Private Sub btnDeb_Click(sender As Object, e As EventArgs) Handles btnDeb.Click
+        deb = True
     End Sub
 End Class
