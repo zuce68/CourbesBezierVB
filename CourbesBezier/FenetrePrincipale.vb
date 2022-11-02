@@ -173,7 +173,7 @@ Public Class FenetrePrincipale
                 pointeur += 1
             Next t
 
-            lblLongueur.Text = longueur.ToString
+            lblLongueur.Text = longueur.ToString("N3")
 
         End If
     End Sub
@@ -299,6 +299,36 @@ Public Class FenetrePrincipale
     Private Sub nbSegements_ValueChanged_1(sender As Object, e As EventArgs) Handles nbSegements.Click
         modifier.PerformClick()
 
+    End Sub
+
+    Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
+
+    End Sub
+
+    Private Sub InfoToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles InfoToolStripMenuItem1.Click
+        MessageBox.Show("© Courbe de Bézier - Télécom Physique Strasbourg - A.Dotte & P.Misiuk 2022", "Informations")
+    End Sub
+
+    Private Sub SaveAsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveAsToolStripMenuItem.Click
+        Dim saveFileDialog1 As New SaveFileDialog()
+        Dim myStream As IO.Stream
+        saveFileDialog1.Filter = "jpg files (*.jpg)|*.*"
+        'I understand this
+        saveFileDialog1.FilterIndex = 1 ' I understand this
+        saveFileDialog1.RestoreDirectory = True ' I understand this
+
+        If saveFileDialog1.ShowDialog() = DialogResult.OK Then
+            ' I don't understand the rest
+            myStream = saveFileDialog1.OpenFile()
+            If (myStream IsNot Nothing) Then
+                Dim Masize = New Size(plan.Bounds.Width, plan.Bounds.Height)
+                Dim maBitmap = New Bitmap(plan.Bounds.Width, plan.Bounds.Height)
+                Dim G As Graphics = Graphics.FromImage(maBitmap)
+                G.CopyFromScreen(New Point(0, 0), New Point(0, 0), Masize)
+                maBitmap.Save(myStream.ToString)
+                myStream.Close()
+            End If
+        End If
     End Sub
 
     Private Sub pointData_SelectedIndexChanged(sender As Object, e As EventArgs) Handles pointData.ItemSelectionChanged

@@ -26,6 +26,9 @@ Partial Class FenetrePrincipale
         Me.plan = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.nbSegements = New System.Windows.Forms.NumericUpDown()
+        Me.pbCouleur = New System.Windows.Forms.PictureBox()
+        Me.btnCouleur = New System.Windows.Forms.Button()
         Me.lblLongueur = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.btnTfin = New System.Windows.Forms.Button()
@@ -59,11 +62,15 @@ Partial Class FenetrePrincipale
         Me.Label2 = New System.Windows.Forms.Label()
         Me.lblMouse = New System.Windows.Forms.Label()
         Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
-        Me.btnCouleur = New System.Windows.Forms.Button()
-        Me.pbCouleur = New System.Windows.Forms.PictureBox()
-        Me.nbSegements = New System.Windows.Forms.NumericUpDown()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SaveAsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.InfoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.InfoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.plan, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.nbSegements, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbCouleur, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Ytfin, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Xtfin, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Yfin, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -72,8 +79,7 @@ Partial Class FenetrePrincipale
         CType(Me.Xfin, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Ydeb, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Xdeb, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pbCouleur, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.nbSegements, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'plan
@@ -83,7 +89,7 @@ Partial Class FenetrePrincipale
         Me.plan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.plan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.plan.Cursor = System.Windows.Forms.Cursors.Cross
-        Me.plan.Location = New System.Drawing.Point(15, 32)
+        Me.plan.Location = New System.Drawing.Point(15, 59)
         Me.plan.Name = "plan"
         Me.plan.Size = New System.Drawing.Size(408, 406)
         Me.plan.TabIndex = 0
@@ -92,7 +98,7 @@ Partial Class FenetrePrincipale
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 9)
+        Me.Label1.Location = New System.Drawing.Point(12, 32)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(31, 13)
         Me.Label1.TabIndex = 1
@@ -140,6 +146,33 @@ Partial Class FenetrePrincipale
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Coordonées"
+        '
+        'nbSegements
+        '
+        Me.nbSegements.Location = New System.Drawing.Point(308, 126)
+        Me.nbSegements.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.nbSegements.Name = "nbSegements"
+        Me.nbSegements.Size = New System.Drawing.Size(93, 20)
+        Me.nbSegements.TabIndex = 30
+        Me.nbSegements.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        '
+        'pbCouleur
+        '
+        Me.pbCouleur.BackColor = System.Drawing.Color.White
+        Me.pbCouleur.Location = New System.Drawing.Point(130, 152)
+        Me.pbCouleur.Name = "pbCouleur"
+        Me.pbCouleur.Size = New System.Drawing.Size(31, 19)
+        Me.pbCouleur.TabIndex = 29
+        Me.pbCouleur.TabStop = False
+        '
+        'btnCouleur
+        '
+        Me.btnCouleur.Location = New System.Drawing.Point(33, 150)
+        Me.btnCouleur.Name = "btnCouleur"
+        Me.btnCouleur.Size = New System.Drawing.Size(96, 23)
+        Me.btnCouleur.TabIndex = 28
+        Me.btnCouleur.Text = "Couleur"
+        Me.btnCouleur.UseVisualStyleBackColor = True
         '
         'lblLongueur
         '
@@ -442,53 +475,65 @@ Partial Class FenetrePrincipale
         '
         Me.lblMouse.AutoSize = True
         Me.lblMouse.BackColor = System.Drawing.Color.White
-        Me.lblMouse.Location = New System.Drawing.Point(24, 38)
+        Me.lblMouse.Location = New System.Drawing.Point(25, 74)
         Me.lblMouse.Name = "lblMouse"
         Me.lblMouse.Size = New System.Drawing.Size(28, 13)
         Me.lblMouse.TabIndex = 4
         Me.lblMouse.Text = "(0,0)"
         '
-        'btnCouleur
+        'MenuStrip1
         '
-        Me.btnCouleur.Location = New System.Drawing.Point(33, 150)
-        Me.btnCouleur.Name = "btnCouleur"
-        Me.btnCouleur.Size = New System.Drawing.Size(96, 23)
-        Me.btnCouleur.TabIndex = 28
-        Me.btnCouleur.Text = "Couleur"
-        Me.btnCouleur.UseVisualStyleBackColor = True
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.InfoToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(842, 24)
+        Me.MenuStrip1.TabIndex = 5
+        Me.MenuStrip1.Text = "MenuStrip1"
         '
-        'pbCouleur
+        'ToolStripMenuItem1
         '
-        Me.pbCouleur.BackColor = System.Drawing.Color.White
-        Me.pbCouleur.Location = New System.Drawing.Point(130, 152)
-        Me.pbCouleur.Name = "pbCouleur"
-        Me.pbCouleur.Size = New System.Drawing.Size(31, 19)
-        Me.pbCouleur.TabIndex = 29
-        Me.pbCouleur.TabStop = False
+        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SaveAsToolStripMenuItem})
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(37, 20)
+        Me.ToolStripMenuItem1.Text = "File"
         '
-        'nbSegements
+        'SaveAsToolStripMenuItem
         '
-        Me.nbSegements.Location = New System.Drawing.Point(308, 126)
-        Me.nbSegements.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.nbSegements.Name = "nbSegements"
-        Me.nbSegements.Size = New System.Drawing.Size(93, 20)
-        Me.nbSegements.TabIndex = 30
-        Me.nbSegements.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.SaveAsToolStripMenuItem.Name = "SaveAsToolStripMenuItem"
+        Me.SaveAsToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SaveAsToolStripMenuItem.Text = "Save As"
+        '
+        'InfoToolStripMenuItem
+        '
+        Me.InfoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InfoToolStripMenuItem1})
+        Me.InfoToolStripMenuItem.Name = "InfoToolStripMenuItem"
+        Me.InfoToolStripMenuItem.Size = New System.Drawing.Size(47, 20)
+        Me.InfoToolStripMenuItem.Text = "More"
+        '
+        'InfoToolStripMenuItem1
+        '
+        Me.InfoToolStripMenuItem1.Name = "InfoToolStripMenuItem1"
+        Me.InfoToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.InfoToolStripMenuItem1.Text = "Info"
         '
         'FenetrePrincipale
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(842, 450)
+        Me.ClientSize = New System.Drawing.Size(842, 477)
         Me.Controls.Add(Me.lblMouse)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.plan)
+        Me.Controls.Add(Me.MenuStrip1)
+        Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "FenetrePrincipale"
         Me.Text = "Courbe de Bézier"
         CType(Me.plan, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.nbSegements, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbCouleur, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Ytfin, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Xtfin, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Yfin, System.ComponentModel.ISupportInitialize).EndInit()
@@ -497,8 +542,8 @@ Partial Class FenetrePrincipale
         CType(Me.Xfin, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Ydeb, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Xdeb, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pbCouleur, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.nbSegements, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -543,4 +588,9 @@ Partial Class FenetrePrincipale
     Friend WithEvents btnCouleur As Button
     Friend WithEvents pbCouleur As PictureBox
     Friend WithEvents nbSegements As NumericUpDown
+    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents SaveAsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents InfoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents InfoToolStripMenuItem1 As ToolStripMenuItem
 End Class
