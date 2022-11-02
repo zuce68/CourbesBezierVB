@@ -22,11 +22,12 @@ Partial Class FenetrePrincipale
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FenetrePrincipale))
         Me.plan = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.lblLongueur = New System.Windows.Forms.TextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.btnTfin = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.btnTdeb = New System.Windows.Forms.Button()
@@ -37,7 +38,6 @@ Partial Class FenetrePrincipale
         Me.Button1 = New System.Windows.Forms.Button()
         Me.pointData = New System.Windows.Forms.ListView()
         Me.Ytfin = New System.Windows.Forms.NumericUpDown()
-        Me.nbSegements = New System.Windows.Forms.NumericUpDown()
         Me.Xtfin = New System.Windows.Forms.NumericUpDown()
         Me.Yfin = New System.Windows.Forms.NumericUpDown()
         Me.Xtdeb = New System.Windows.Forms.NumericUpDown()
@@ -57,11 +57,14 @@ Partial Class FenetrePrincipale
         Me.ajouter = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.CourbeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.lblMouse = New System.Windows.Forms.Label()
+        Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
+        Me.btnCouleur = New System.Windows.Forms.Button()
+        Me.pbCouleur = New System.Windows.Forms.PictureBox()
+        Me.nbSegements = New System.Windows.Forms.NumericUpDown()
         CType(Me.plan, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.Ytfin, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.nbSegements, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Xtfin, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Yfin, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Xtdeb, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -69,7 +72,8 @@ Partial Class FenetrePrincipale
         CType(Me.Xfin, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Ydeb, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Xdeb, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.CourbeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbCouleur, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nbSegements, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'plan
@@ -78,6 +82,7 @@ Partial Class FenetrePrincipale
         Me.plan.BackgroundImage = CType(resources.GetObject("plan.BackgroundImage"), System.Drawing.Image)
         Me.plan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.plan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.plan.Cursor = System.Windows.Forms.Cursors.Cross
         Me.plan.Location = New System.Drawing.Point(15, 32)
         Me.plan.Name = "plan"
         Me.plan.Size = New System.Drawing.Size(408, 406)
@@ -95,6 +100,11 @@ Partial Class FenetrePrincipale
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.nbSegements)
+        Me.GroupBox1.Controls.Add(Me.pbCouleur)
+        Me.GroupBox1.Controls.Add(Me.btnCouleur)
+        Me.GroupBox1.Controls.Add(Me.lblLongueur)
+        Me.GroupBox1.Controls.Add(Me.Label11)
         Me.GroupBox1.Controls.Add(Me.btnTfin)
         Me.GroupBox1.Controls.Add(Me.Button4)
         Me.GroupBox1.Controls.Add(Me.btnTdeb)
@@ -105,7 +115,6 @@ Partial Class FenetrePrincipale
         Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Controls.Add(Me.pointData)
         Me.GroupBox1.Controls.Add(Me.Ytfin)
-        Me.GroupBox1.Controls.Add(Me.nbSegements)
         Me.GroupBox1.Controls.Add(Me.Xtfin)
         Me.GroupBox1.Controls.Add(Me.Yfin)
         Me.GroupBox1.Controls.Add(Me.Xtdeb)
@@ -131,6 +140,24 @@ Partial Class FenetrePrincipale
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Coordonées"
+        '
+        'lblLongueur
+        '
+        Me.lblLongueur.Enabled = False
+        Me.lblLongueur.Location = New System.Drawing.Point(93, 126)
+        Me.lblLongueur.Name = "lblLongueur"
+        Me.lblLongueur.Size = New System.Drawing.Size(74, 20)
+        Me.lblLongueur.TabIndex = 27
+        Me.lblLongueur.Text = "0"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(34, 129)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(61, 13)
+        Me.Label11.TabIndex = 26
+        Me.Label11.Text = "Longueur : "
         '
         'btnTfin
         '
@@ -209,7 +236,7 @@ Partial Class FenetrePrincipale
         Me.pointData.HideSelection = False
         Me.pointData.Location = New System.Drawing.Point(36, 206)
         Me.pointData.Name = "pointData"
-        Me.pointData.Size = New System.Drawing.Size(284, 128)
+        Me.pointData.Size = New System.Drawing.Size(359, 128)
         Me.pointData.TabIndex = 4
         Me.pointData.UseCompatibleStateImageBehavior = False
         '
@@ -223,16 +250,6 @@ Partial Class FenetrePrincipale
         Me.Ytfin.Name = "Ytfin"
         Me.Ytfin.Size = New System.Drawing.Size(99, 20)
         Me.Ytfin.TabIndex = 24
-        '
-        'nbSegements
-        '
-        Me.nbSegements.Location = New System.Drawing.Point(159, 141)
-        Me.nbSegements.Maximum = New Decimal(New Integer() {100000, 0, 0, 0})
-        Me.nbSegements.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.nbSegements.Name = "nbSegements"
-        Me.nbSegements.Size = New System.Drawing.Size(161, 20)
-        Me.nbSegements.TabIndex = 23
-        Me.nbSegements.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'Xtfin
         '
@@ -359,7 +376,7 @@ Partial Class FenetrePrincipale
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(34, 143)
+        Me.Label10.Location = New System.Drawing.Point(183, 129)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(119, 13)
         Me.Label10.TabIndex = 8
@@ -421,15 +438,49 @@ Partial Class FenetrePrincipale
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "Xdeb"
         '
-        'CourbeBindingSource
+        'lblMouse
         '
-        Me.CourbeBindingSource.DataSource = GetType(CourbesBezier.Courbe)
+        Me.lblMouse.AutoSize = True
+        Me.lblMouse.BackColor = System.Drawing.Color.White
+        Me.lblMouse.Location = New System.Drawing.Point(24, 38)
+        Me.lblMouse.Name = "lblMouse"
+        Me.lblMouse.Size = New System.Drawing.Size(28, 13)
+        Me.lblMouse.TabIndex = 4
+        Me.lblMouse.Text = "(0,0)"
+        '
+        'btnCouleur
+        '
+        Me.btnCouleur.Location = New System.Drawing.Point(33, 150)
+        Me.btnCouleur.Name = "btnCouleur"
+        Me.btnCouleur.Size = New System.Drawing.Size(96, 23)
+        Me.btnCouleur.TabIndex = 28
+        Me.btnCouleur.Text = "Couleur"
+        Me.btnCouleur.UseVisualStyleBackColor = True
+        '
+        'pbCouleur
+        '
+        Me.pbCouleur.BackColor = System.Drawing.Color.White
+        Me.pbCouleur.Location = New System.Drawing.Point(130, 152)
+        Me.pbCouleur.Name = "pbCouleur"
+        Me.pbCouleur.Size = New System.Drawing.Size(31, 19)
+        Me.pbCouleur.TabIndex = 29
+        Me.pbCouleur.TabStop = False
+        '
+        'nbSegements
+        '
+        Me.nbSegements.Location = New System.Drawing.Point(308, 126)
+        Me.nbSegements.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.nbSegements.Name = "nbSegements"
+        Me.nbSegements.Size = New System.Drawing.Size(93, 20)
+        Me.nbSegements.TabIndex = 30
+        Me.nbSegements.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'FenetrePrincipale
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(842, 450)
+        Me.Controls.Add(Me.lblMouse)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.plan)
@@ -439,7 +490,6 @@ Partial Class FenetrePrincipale
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.Ytfin, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.nbSegements, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Xtfin, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Yfin, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Xtdeb, System.ComponentModel.ISupportInitialize).EndInit()
@@ -447,7 +497,8 @@ Partial Class FenetrePrincipale
         CType(Me.Xfin, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Ydeb, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Xdeb, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CourbeBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbCouleur, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nbSegements, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -474,10 +525,8 @@ Partial Class FenetrePrincipale
     Friend WithEvents Xfin As NumericUpDown
     Friend WithEvents Ydeb As NumericUpDown
     Friend WithEvents Xdeb As NumericUpDown
-    Friend WithEvents nbSegements As NumericUpDown
     Friend WithEvents Label10 As Label
     Friend WithEvents modifier As Button
-    Friend WithEvents CourbeBindingSource As BindingSource
     Friend WithEvents pointData As ListView
     Friend WithEvents btnTfin As Button
     Friend WithEvents Button4 As Button
@@ -487,4 +536,11 @@ Partial Class FenetrePrincipale
     Friend WithEvents Button2 As Button
     Friend WithEvents btnDeb As Button
     Friend WithEvents Button1 As Button
+    Friend WithEvents Label11 As Label
+    Friend WithEvents lblLongueur As TextBox
+    Friend WithEvents lblMouse As Label
+    Friend WithEvents ColorDialog1 As ColorDialog
+    Friend WithEvents btnCouleur As Button
+    Friend WithEvents pbCouleur As PictureBox
+    Friend WithEvents nbSegements As NumericUpDown
 End Class

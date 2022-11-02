@@ -4,14 +4,13 @@
     Private color As Color
 
     Public Property segmentDefine As Integer
-
         Get
 
             Return nbSegement
 
         End Get
 
-        Set(ByVal segement As Integer)
+        Set(segement As Integer)
 
             nbSegement = segement
 
@@ -38,7 +37,7 @@
 
         Get
 
-            Return "[" + points(0, 0).ToString + ";" + points(0, 1).ToString + "]" + "[" + points(1, 0).ToString + ";" + points(1, 1).ToString + "]" + "[" + points(2, 0).ToString + ";" + points(2, 1).ToString + "]" + "[" + points(3, 0).ToString + ";" + points(3, 1).ToString + "]"
+            Return "[" + points(0, 0).ToString("N2") + ";" + points(0, 1).ToString("N2") + "]" + "[" + points(1, 0).ToString("N2") + ";" + points(1, 1).ToString("N2") + "]" + "[" + points(2, 0).ToString("N2") + ";" + points(2, 1).ToString("N2") + "]" + "[" + points(3, 0).ToString("N2") + ";" + points(3, 1).ToString("N2") + "]"
 
         End Get
 
