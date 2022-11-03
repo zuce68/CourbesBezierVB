@@ -310,25 +310,21 @@ Public Class FenetrePrincipale
     End Sub
 
     Private Sub SaveAsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveAsToolStripMenuItem.Click
-        Dim saveFileDialog1 As New SaveFileDialog()
-        Dim myStream As IO.Stream
-        saveFileDialog1.Filter = "jpg files (*.jpg)|*.*"
-        'I understand this
-        saveFileDialog1.FilterIndex = 1 ' I understand this
-        saveFileDialog1.RestoreDirectory = True ' I understand this
-
+        Dim saveFileDialog1 As New FolderBrowserDialog
         If saveFileDialog1.ShowDialog() = DialogResult.OK Then
-            ' I don't understand the rest
-            myStream = saveFileDialog1.OpenFile()
-            If (myStream IsNot Nothing) Then
-                Dim Masize = New Size(plan.Bounds.Width, plan.Bounds.Height)
-                Dim maBitmap = New Bitmap(plan.Bounds.Width, plan.Bounds.Height)
-                Dim G As Graphics = Graphics.FromImage(maBitmap)
-                G.CopyFromScreen(New Point(0, 0), New Point(0, 0), Masize)
-                maBitmap.Save(myStream.ToString)
-                myStream.Close()
-            End If
+            Dim FileToSaveAs As String = System.IO.Path.Combine(My.Computer.FileSystem.SpecialDirectories.Temp, saveFileDialog1.SelectedPath + "\" + TimeString.Replace(":", "_") + ".jpg")
+            Dim size As Size = plan.Size
+            Dim tmpBmp As New Bitmap(size.Width, size.Height)
+            Dim g As Graphics
+            g = Graphics.FromImage(tmpBmp)
+            g.CopyFromScreen(plan.PointToScreen(New Drawing.Point(0, 0)), New Drawing.Point(0, 0),
+                         New Size(size.Width, size.Height))
+            tmpBmp.Save(FileToSaveAs, System.Drawing.Imaging.ImageFormat.Jpeg)
         End If
+    End Sub
+
+    Private Sub GroupBox2_Enter(sender As Object, e As EventArgs) Handles GroupBox2.Enter
+
     End Sub
 
     Private Sub pointData_SelectedIndexChanged(sender As Object, e As EventArgs) Handles pointData.ItemSelectionChanged

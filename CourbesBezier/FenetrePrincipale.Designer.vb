@@ -24,7 +24,6 @@ Partial Class FenetrePrincipale
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FenetrePrincipale))
         Me.plan = New System.Windows.Forms.PictureBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.nbSegements = New System.Windows.Forms.NumericUpDown()
         Me.pbCouleur = New System.Windows.Forms.PictureBox()
@@ -67,6 +66,7 @@ Partial Class FenetrePrincipale
         Me.SaveAsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InfoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InfoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         CType(Me.plan, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.nbSegements, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -80,6 +80,7 @@ Partial Class FenetrePrincipale
         CType(Me.Ydeb, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Xdeb, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'plan
@@ -89,20 +90,11 @@ Partial Class FenetrePrincipale
         Me.plan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.plan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.plan.Cursor = System.Windows.Forms.Cursors.Cross
-        Me.plan.Location = New System.Drawing.Point(15, 59)
+        Me.plan.Location = New System.Drawing.Point(6, 16)
         Me.plan.Name = "plan"
         Me.plan.Size = New System.Drawing.Size(408, 406)
         Me.plan.TabIndex = 0
         Me.plan.TabStop = False
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 32)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(31, 13)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Plan "
         '
         'GroupBox1
         '
@@ -475,7 +467,7 @@ Partial Class FenetrePrincipale
         '
         Me.lblMouse.AutoSize = True
         Me.lblMouse.BackColor = System.Drawing.Color.White
-        Me.lblMouse.Location = New System.Drawing.Point(25, 74)
+        Me.lblMouse.Location = New System.Drawing.Point(9, 27)
         Me.lblMouse.Name = "lblMouse"
         Me.lblMouse.Size = New System.Drawing.Size(28, 13)
         Me.lblMouse.TabIndex = 4
@@ -513,18 +505,27 @@ Partial Class FenetrePrincipale
         'InfoToolStripMenuItem1
         '
         Me.InfoToolStripMenuItem1.Name = "InfoToolStripMenuItem1"
-        Me.InfoToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.InfoToolStripMenuItem1.Size = New System.Drawing.Size(95, 22)
         Me.InfoToolStripMenuItem1.Text = "Info"
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.lblMouse)
+        Me.GroupBox2.Controls.Add(Me.plan)
+        Me.GroupBox2.Location = New System.Drawing.Point(3, 32)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(420, 433)
+        Me.GroupBox2.TabIndex = 6
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Plan"
         '
         'FenetrePrincipale
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(842, 477)
-        Me.Controls.Add(Me.lblMouse)
+        Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.plan)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "FenetrePrincipale"
@@ -544,13 +545,12 @@ Partial Class FenetrePrincipale
         CType(Me.Xdeb, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents plan As PictureBox
-    Friend WithEvents Label1 As Label
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
@@ -593,4 +593,6 @@ Partial Class FenetrePrincipale
     Friend WithEvents SaveAsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents InfoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents InfoToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents plan As PictureBox
+    Friend WithEvents GroupBox2 As GroupBox
 End Class
