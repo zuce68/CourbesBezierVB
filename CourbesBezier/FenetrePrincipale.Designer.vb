@@ -25,6 +25,7 @@ Partial Class FenetrePrincipale
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FenetrePrincipale))
         Me.plan = New System.Windows.Forms.PictureBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.showAll = New System.Windows.Forms.CheckBox()
         Me.nbSegements = New System.Windows.Forms.NumericUpDown()
         Me.pbCouleur = New System.Windows.Forms.PictureBox()
         Me.btnCouleur = New System.Windows.Forms.Button()
@@ -63,6 +64,8 @@ Partial Class FenetrePrincipale
         Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LoadToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SaveAsToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.SaveAsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InfoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InfoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
@@ -98,6 +101,7 @@ Partial Class FenetrePrincipale
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.showAll)
         Me.GroupBox1.Controls.Add(Me.nbSegements)
         Me.GroupBox1.Controls.Add(Me.pbCouleur)
         Me.GroupBox1.Controls.Add(Me.btnCouleur)
@@ -139,6 +143,16 @@ Partial Class FenetrePrincipale
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Coordonées"
         '
+        'showAll
+        '
+        Me.showAll.AutoSize = True
+        Me.showAll.Location = New System.Drawing.Point(309, 181)
+        Me.showAll.Name = "showAll"
+        Me.showAll.Size = New System.Drawing.Size(86, 17)
+        Me.showAll.TabIndex = 31
+        Me.showAll.Text = "Tout afficher"
+        Me.showAll.UseVisualStyleBackColor = True
+        '
         'nbSegements
         '
         Me.nbSegements.Location = New System.Drawing.Point(308, 126)
@@ -161,7 +175,7 @@ Partial Class FenetrePrincipale
         '
         Me.btnCouleur.Location = New System.Drawing.Point(33, 150)
         Me.btnCouleur.Name = "btnCouleur"
-        Me.btnCouleur.Size = New System.Drawing.Size(96, 23)
+        Me.btnCouleur.Size = New System.Drawing.Size(75, 23)
         Me.btnCouleur.TabIndex = 28
         Me.btnCouleur.Text = "Couleur"
         Me.btnCouleur.UseVisualStyleBackColor = True
@@ -418,9 +432,9 @@ Partial Class FenetrePrincipale
         '
         'supprimer
         '
-        Me.supprimer.Location = New System.Drawing.Point(227, 177)
+        Me.supprimer.Location = New System.Drawing.Point(195, 177)
         Me.supprimer.Name = "supprimer"
-        Me.supprimer.Size = New System.Drawing.Size(96, 23)
+        Me.supprimer.Size = New System.Drawing.Size(75, 23)
         Me.supprimer.TabIndex = 4
         Me.supprimer.Text = "Supprimer"
         Me.supprimer.UseVisualStyleBackColor = True
@@ -428,9 +442,9 @@ Partial Class FenetrePrincipale
         '
         'modifier
         '
-        Me.modifier.Location = New System.Drawing.Point(130, 177)
+        Me.modifier.Location = New System.Drawing.Point(114, 177)
         Me.modifier.Name = "modifier"
-        Me.modifier.Size = New System.Drawing.Size(96, 23)
+        Me.modifier.Size = New System.Drawing.Size(75, 23)
         Me.modifier.TabIndex = 4
         Me.modifier.Text = "Modifier"
         Me.modifier.UseVisualStyleBackColor = True
@@ -440,7 +454,7 @@ Partial Class FenetrePrincipale
         '
         Me.ajouter.Location = New System.Drawing.Point(33, 177)
         Me.ajouter.Name = "ajouter"
-        Me.ajouter.Size = New System.Drawing.Size(96, 23)
+        Me.ajouter.Size = New System.Drawing.Size(75, 23)
         Me.ajouter.TabIndex = 4
         Me.ajouter.Text = "Ajouter"
         Me.ajouter.UseVisualStyleBackColor = True
@@ -484,16 +498,28 @@ Partial Class FenetrePrincipale
         '
         'ToolStripMenuItem1
         '
-        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SaveAsToolStripMenuItem})
+        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoadToolStripMenuItem, Me.SaveAsToolStripMenuItem1, Me.SaveAsToolStripMenuItem})
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
         Me.ToolStripMenuItem1.Size = New System.Drawing.Size(37, 20)
         Me.ToolStripMenuItem1.Text = "File"
         '
+        'LoadToolStripMenuItem
+        '
+        Me.LoadToolStripMenuItem.Name = "LoadToolStripMenuItem"
+        Me.LoadToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.LoadToolStripMenuItem.Text = "Load"
+        '
+        'SaveAsToolStripMenuItem1
+        '
+        Me.SaveAsToolStripMenuItem1.Name = "SaveAsToolStripMenuItem1"
+        Me.SaveAsToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.SaveAsToolStripMenuItem1.Text = "Save As"
+        '
         'SaveAsToolStripMenuItem
         '
         Me.SaveAsToolStripMenuItem.Name = "SaveAsToolStripMenuItem"
-        Me.SaveAsToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.SaveAsToolStripMenuItem.Text = "Save As"
+        Me.SaveAsToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
+        Me.SaveAsToolStripMenuItem.Text = "Exporter (.JPG)"
         '
         'InfoToolStripMenuItem
         '
@@ -595,4 +621,7 @@ Partial Class FenetrePrincipale
     Friend WithEvents InfoToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents plan As PictureBox
     Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents showAll As CheckBox
+    Friend WithEvents LoadToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SaveAsToolStripMenuItem1 As ToolStripMenuItem
 End Class
