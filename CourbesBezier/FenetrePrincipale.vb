@@ -388,6 +388,7 @@ Public Class FenetrePrincipale
             g.CopyFromScreen(plan.PointToScreen(New Drawing.Point(0, 0)), New Drawing.Point(0, 0),
                          New Size(size.Width, size.Height))
             tmpBmp.Save(FileToSaveAs, System.Drawing.Imaging.ImageFormat.Jpeg)
+            MessageBox.Show("Exportation terminée")
         End If
     End Sub
 
@@ -411,6 +412,7 @@ Public Class FenetrePrincipale
                 fs.Write(info, 0, info.Length)
             Next
             fs.Close()
+            MessageBox.Show("Exportation terminée")
         End If
     End Sub
 

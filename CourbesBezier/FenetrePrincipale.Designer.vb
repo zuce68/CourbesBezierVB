@@ -507,19 +507,19 @@ Partial Class FenetrePrincipale
         '
         Me.LoadToolStripMenuItem.Name = "LoadToolStripMenuItem"
         Me.LoadToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.LoadToolStripMenuItem.Text = "Load"
+        Me.LoadToolStripMenuItem.Text = "Open"
         '
         'SaveAsToolStripMenuItem1
         '
         Me.SaveAsToolStripMenuItem1.Name = "SaveAsToolStripMenuItem1"
         Me.SaveAsToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
-        Me.SaveAsToolStripMenuItem1.Text = "Save As"
+        Me.SaveAsToolStripMenuItem1.Text = "Save"
         '
         'SaveAsToolStripMenuItem
         '
         Me.SaveAsToolStripMenuItem.Name = "SaveAsToolStripMenuItem"
-        Me.SaveAsToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
-        Me.SaveAsToolStripMenuItem.Text = "Exporter (.JPG)"
+        Me.SaveAsToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SaveAsToolStripMenuItem.Text = "Exporter en JPEG"
         '
         'InfoToolStripMenuItem
         '
