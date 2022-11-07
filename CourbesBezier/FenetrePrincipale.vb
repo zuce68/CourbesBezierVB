@@ -382,12 +382,10 @@ Public Class FenetrePrincipale
         If saveFileDialog1.ShowDialog() = DialogResult.OK Then
             Dim FileToSaveAs As String = System.IO.Path.Combine(My.Computer.FileSystem.SpecialDirectories.Temp, saveFileDialog1.SelectedPath + "\" + TimeString.Replace(":", "_") + ".jpg")
             Dim size As Size = plan.Size
-            Dim tmpBmp As New Bitmap(size.Width, size.Height)
-            Dim g As Graphics
-            g = Graphics.FromImage(tmpBmp)
-            g.CopyFromScreen(plan.PointToScreen(New Drawing.Point(0, 0)), New Drawing.Point(0, 0),
-                         New Size(size.Width, size.Height))
-            tmpBmp.Save(FileToSaveAs, System.Drawing.Imaging.ImageFormat.Jpeg)
+            Dim btmp As New Bitmap(size.Width, size.Height)
+            Dim rect As New Rectangle(plan.Location, plan.Size)
+            FenetrePrincipale.ActiveForm.DrawToBitmap(btmp, rect)
+            btmp.Save(FileToSaveAs, System.Drawing.Imaging.ImageFormat.Jpeg)
             MessageBox.Show("Exportation terminée")
         End If
     End Sub
