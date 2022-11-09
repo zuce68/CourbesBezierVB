@@ -420,6 +420,7 @@ Public Class FenetrePrincipale
             Dim fileReader As System.IO.StreamReader
             fileReader = My.Computer.FileSystem.OpenTextFileReader(openFileDialog.FileName)
             Dim stringReader As String
+            pointData.Items.Clear()
             Do
                 stringReader = fileReader.ReadLine()
                 If stringReader <> Nothing Then
