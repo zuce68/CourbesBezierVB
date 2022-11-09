@@ -104,6 +104,11 @@ Public Class FenetrePrincipale
 
 
             myItem.Text = myItem.Tag.myPoints
+
+            If pbCouleur.BackColor <> myItem.Tag.colorDefine Then
+                myItem.Tag.colorDefine = pbCouleur.BackColor
+            End If
+
             myItem.BackColor = myItem.Tag.colorDefine
 
             pointData.Refresh()
@@ -479,8 +484,6 @@ Public Class FenetrePrincipale
             If indexes.Count > 0 Then
                 myItem = pointData.Items.Item(indexes(0))
 
-
-
                 Xdeb.Value = myItem.Tag.points(0, 0)
                 Ydeb.Value = myItem.Tag.points(0, 1)
                 Xfin.Value = myItem.Tag.points(1, 0)
@@ -490,6 +493,7 @@ Public Class FenetrePrincipale
                 Xtfin.Value = myItem.Tag.points(3, 0)
                 Ytfin.Value = myItem.Tag.points(3, 1)
                 nbSegements.Value = myItem.Tag.segmentDefine
+                pbCouleur.BackColor = myItem.Tag.colorDefine
                 index = myItem.Index
 
                 Afficher(myItem.Tag)
@@ -500,10 +504,9 @@ Public Class FenetrePrincipale
         ElseIf pointData.SelectedItems.Count = 0 Then
             plan.Image = Nothing
             modifier.Visible = False
+            pbCouleur.BackColor = Color.White
             supprimer.Visible = False
         End If
-
-
     End Sub
 
     Private Sub Supprimer_Click(sender As Object, e As EventArgs) Handles supprimer.Click
