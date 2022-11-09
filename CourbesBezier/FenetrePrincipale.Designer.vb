@@ -148,7 +148,7 @@ Partial Class FenetrePrincipale
         Me.showAll.AutoSize = True
         Me.showAll.Location = New System.Drawing.Point(309, 181)
         Me.showAll.Name = "showAll"
-        Me.showAll.Size = New System.Drawing.Size(86, 17)
+        Me.showAll.Size = New System.Drawing.Size(96, 19)
         Me.showAll.TabIndex = 31
         Me.showAll.Text = "Tout afficher"
         Me.showAll.UseVisualStyleBackColor = True
@@ -194,7 +194,7 @@ Partial Class FenetrePrincipale
         Me.Label11.AutoSize = True
         Me.Label11.Location = New System.Drawing.Point(34, 129)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(61, 13)
+        Me.Label11.Size = New System.Drawing.Size(69, 15)
         Me.Label11.TabIndex = 26
         Me.Label11.Text = "Longueur : "
         '
@@ -272,8 +272,10 @@ Partial Class FenetrePrincipale
         '
         'pointData
         '
+        Me.pointData.FullRowSelect = True
         Me.pointData.HideSelection = False
         Me.pointData.Location = New System.Drawing.Point(36, 206)
+        Me.pointData.MultiSelect = False
         Me.pointData.Name = "pointData"
         Me.pointData.Size = New System.Drawing.Size(359, 128)
         Me.pointData.TabIndex = 4
@@ -372,7 +374,7 @@ Partial Class FenetrePrincipale
         Me.Label8.AutoSize = True
         Me.Label8.Location = New System.Drawing.Point(183, 48)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(25, 13)
+        Me.Label8.Size = New System.Drawing.Size(27, 15)
         Me.Label8.TabIndex = 15
         Me.Label8.Text = "Yfin"
         '
@@ -381,7 +383,7 @@ Partial Class FenetrePrincipale
         Me.Label9.AutoSize = True
         Me.Label9.Location = New System.Drawing.Point(34, 48)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(25, 13)
+        Me.Label9.Size = New System.Drawing.Size(28, 15)
         Me.Label9.TabIndex = 16
         Me.Label9.Text = "Xfin"
         '
@@ -390,7 +392,7 @@ Partial Class FenetrePrincipale
         Me.Label6.AutoSize = True
         Me.Label6.Location = New System.Drawing.Point(183, 74)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(35, 13)
+        Me.Label6.Size = New System.Drawing.Size(38, 15)
         Me.Label6.TabIndex = 11
         Me.Label6.Text = "Ytdeb"
         '
@@ -399,7 +401,7 @@ Partial Class FenetrePrincipale
         Me.Label7.AutoSize = True
         Me.Label7.Location = New System.Drawing.Point(33, 74)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(35, 13)
+        Me.Label7.Size = New System.Drawing.Size(39, 15)
         Me.Label7.TabIndex = 12
         Me.Label7.Text = "Xtdeb"
         '
@@ -408,7 +410,7 @@ Partial Class FenetrePrincipale
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(183, 100)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(28, 13)
+        Me.Label4.Size = New System.Drawing.Size(30, 15)
         Me.Label4.TabIndex = 7
         Me.Label4.Text = "Ytfin"
         '
@@ -417,7 +419,7 @@ Partial Class FenetrePrincipale
         Me.Label10.AutoSize = True
         Me.Label10.Location = New System.Drawing.Point(183, 129)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(119, 13)
+        Me.Label10.Size = New System.Drawing.Size(139, 15)
         Me.Label10.TabIndex = 8
         Me.Label10.Text = "Nombre de segements :"
         '
@@ -426,7 +428,7 @@ Partial Class FenetrePrincipale
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(34, 100)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(28, 13)
+        Me.Label5.Size = New System.Drawing.Size(31, 15)
         Me.Label5.TabIndex = 8
         Me.Label5.Text = "Xtfin"
         '
@@ -464,7 +466,7 @@ Partial Class FenetrePrincipale
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(183, 22)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(32, 13)
+        Me.Label3.Size = New System.Drawing.Size(35, 15)
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "Ydeb"
         '
@@ -473,7 +475,7 @@ Partial Class FenetrePrincipale
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(34, 22)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(32, 13)
+        Me.Label2.Size = New System.Drawing.Size(36, 15)
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "Xdeb"
         '
@@ -483,16 +485,17 @@ Partial Class FenetrePrincipale
         Me.lblMouse.BackColor = System.Drawing.Color.White
         Me.lblMouse.Location = New System.Drawing.Point(9, 27)
         Me.lblMouse.Name = "lblMouse"
-        Me.lblMouse.Size = New System.Drawing.Size(28, 13)
+        Me.lblMouse.Size = New System.Drawing.Size(32, 15)
         Me.lblMouse.TabIndex = 4
         Me.lblMouse.Text = "(0,0)"
         '
         'MenuStrip1
         '
+        Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.InfoToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(842, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(842, 28)
         Me.MenuStrip1.TabIndex = 5
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -500,38 +503,38 @@ Partial Class FenetrePrincipale
         '
         Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoadToolStripMenuItem, Me.SaveAsToolStripMenuItem1, Me.SaveAsToolStripMenuItem})
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(37, 20)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(46, 24)
         Me.ToolStripMenuItem1.Text = "File"
         '
         'LoadToolStripMenuItem
         '
         Me.LoadToolStripMenuItem.Name = "LoadToolStripMenuItem"
-        Me.LoadToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.LoadToolStripMenuItem.Size = New System.Drawing.Size(203, 26)
         Me.LoadToolStripMenuItem.Text = "Open"
         '
         'SaveAsToolStripMenuItem1
         '
         Me.SaveAsToolStripMenuItem1.Name = "SaveAsToolStripMenuItem1"
-        Me.SaveAsToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.SaveAsToolStripMenuItem1.Size = New System.Drawing.Size(203, 26)
         Me.SaveAsToolStripMenuItem1.Text = "Save"
         '
         'SaveAsToolStripMenuItem
         '
         Me.SaveAsToolStripMenuItem.Name = "SaveAsToolStripMenuItem"
-        Me.SaveAsToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SaveAsToolStripMenuItem.Size = New System.Drawing.Size(203, 26)
         Me.SaveAsToolStripMenuItem.Text = "Exporter en JPEG"
         '
         'InfoToolStripMenuItem
         '
         Me.InfoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InfoToolStripMenuItem1})
         Me.InfoToolStripMenuItem.Name = "InfoToolStripMenuItem"
-        Me.InfoToolStripMenuItem.Size = New System.Drawing.Size(47, 20)
+        Me.InfoToolStripMenuItem.Size = New System.Drawing.Size(58, 24)
         Me.InfoToolStripMenuItem.Text = "More"
         '
         'InfoToolStripMenuItem1
         '
         Me.InfoToolStripMenuItem1.Name = "InfoToolStripMenuItem1"
-        Me.InfoToolStripMenuItem1.Size = New System.Drawing.Size(95, 22)
+        Me.InfoToolStripMenuItem1.Size = New System.Drawing.Size(118, 26)
         Me.InfoToolStripMenuItem1.Text = "Info"
         '
         'GroupBox2

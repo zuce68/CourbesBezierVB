@@ -303,7 +303,7 @@ Public Class FenetrePrincipale
 
 
         pointData.Items.Add(myItem)
-
+        pointData.Select()
 
         Afficher(myCourbe)
 
@@ -471,31 +471,37 @@ Public Class FenetrePrincipale
     End Sub
 
     Private Sub pointData_SelectedIndexChanged(sender As Object, e As EventArgs) Handles pointData.ItemSelectionChanged
+        If pointData.SelectedItems.Count <> 0 Then
+            Dim myItem As ListViewItem
+            Dim indexes As ListView.SelectedIndexCollection = sender.SelectedIndices
+            Dim noSegments As Integer
+            If indexes.Count > 0 Then
+                myItem = pointData.Items.Item(indexes(0))
 
-        Dim myItem As ListViewItem
-        Dim indexes As ListView.SelectedIndexCollection = sender.SelectedIndices
-        Dim noSegments As Integer
-        If indexes.Count > 0 Then
-            myItem = pointData.Items.Item(indexes(0))
 
 
+                Xdeb.Value = myItem.Tag.points(0, 0)
+                Ydeb.Value = myItem.Tag.points(0, 1)
+                Xfin.Value = myItem.Tag.points(1, 0)
+                Yfin.Value = myItem.Tag.points(1, 1)
+                Xtdeb.Value = myItem.Tag.points(2, 0)
+                Ytdeb.Value = myItem.Tag.points(2, 1)
+                Xtfin.Value = myItem.Tag.points(3, 0)
+                Ytfin.Value = myItem.Tag.points(3, 1)
+                nbSegements.Value = myItem.Tag.segmentDefine
+                index = myItem.Index
 
-            Xdeb.Value = myItem.Tag.points(0, 0)
-            Ydeb.Value = myItem.Tag.points(0, 1)
-            Xfin.Value = myItem.Tag.points(1, 0)
-            Yfin.Value = myItem.Tag.points(1, 1)
-            Xtdeb.Value = myItem.Tag.points(2, 0)
-            Ytdeb.Value = myItem.Tag.points(2, 1)
-            Xtfin.Value = myItem.Tag.points(3, 0)
-            Ytfin.Value = myItem.Tag.points(3, 1)
-            nbSegements.Value = myItem.Tag.segmentDefine
-            index = myItem.Index
+                Afficher(myItem.Tag)
 
-            Afficher(myItem.Tag)
-
-            modifier.Visible = True
-            supprimer.Visible = True
+                modifier.Visible = True
+                supprimer.Visible = True
+            End If
+        ElseIf pointData.SelectedItems.Count = 0 Then
+            plan.Image = Nothing
+            modifier.Visible = False
+            supprimer.Visible = False
         End If
+
 
     End Sub
 
