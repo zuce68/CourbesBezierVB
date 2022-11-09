@@ -106,7 +106,7 @@ Public Class FenetrePrincipale
             myItem.Text = myItem.Tag.myPoints
 
             If pbCouleur.BackColor <> myItem.Tag.colorDefine Then
-                myItem.Tag.colorDefine = pbCouleur.BackColor.ToArgb()
+                myItem.Tag.colorDefine = pbCouleur.BackColor
             End If
 
             myItem.BackColor = myItem.Tag.colorDefine
@@ -292,7 +292,7 @@ Public Class FenetrePrincipale
 
 
         If pbCouleur.BackColor <> Color.White Then
-            myCourbe.colorDefine = pbCouleur.BackColor.ToArgb()
+            myCourbe.colorDefine = pbCouleur.BackColor
         Else
             myCourbe.colorDefine = randomColor()
         End If
@@ -411,7 +411,7 @@ Public Class FenetrePrincipale
             Dim fs As FileStream = File.Create(FileToSaveAs)
             For Each myItem As ListViewItem In pointData.Items
                 ' Add text to the file.
-                Dim info As Byte() = New UTF8Encoding(True).GetBytes(myItem.Tag.myPoints + " " + myItem.Tag.colorDefine.ToString + "|" + myItem.Tag.segmentDefine.ToString & vbCrLf)
+                Dim info As Byte() = New UTF8Encoding(True).GetBytes(myItem.Tag.myPoints + "|" + myItem.Tag.colorDefine.ToArgb.ToString + "|" + myItem.Tag.segmentDefine.ToString & vbCrLf)
                 fs.Write(info, 0, info.Length)
             Next
             fs.Close()
@@ -430,24 +430,19 @@ Public Class FenetrePrincipale
                 stringReader = fileReader.ReadLine()
                 If stringReader <> Nothing Then
                     Try
-                        Dim A, R, G, B As String
                         Dim myCourbe As New Courbe
-                        A = stringReader.Split("Color")(1).Split("[A=")(1).Split(", R")(0).Replace("A=", "")
-                        R = stringReader.Split("Color")(1).Split(",")(1).Replace("R=", "")
-                        G = stringReader.Split("Color")(1).Split(",")(2).Replace("G=", "")
-                        B = stringReader.Split("Color")(1).Split(",")(3).Split("]")(0).Replace("B=", "")
-                        Dim colorFile As Color = Color.FromArgb(Integer.Parse(A), Integer.Parse(R), Integer.Parse(G), Integer.Parse(B))
+                        Dim colorFile As Color = Color.FromArgb(stringReader.Split("|")(1))
 
-                        myCourbe.points(0, 0) = Decimal.Parse(stringReader.Split("Color")(0).Split("[")(1).Split(";")(0))
-                        myCourbe.points(0, 1) = Decimal.Parse(stringReader.Split("Color")(0).Split("[")(1).Split(";")(1).Replace("]", ""))
-                        myCourbe.points(1, 0) = Decimal.Parse(stringReader.Split("Color")(0).Split("[")(2).Split(";")(0))
-                        myCourbe.points(1, 1) = Decimal.Parse(stringReader.Split("Color")(0).Split("[")(2).Split(";")(1).Replace("]", ""))
-                        myCourbe.points(2, 0) = Decimal.Parse(stringReader.Split("Color")(0).Split("[")(3).Split(";")(0))
-                        myCourbe.points(2, 1) = Decimal.Parse(stringReader.Split("Color")(0).Split("[")(3).Split(";")(1).Replace("]", ""))
-                        myCourbe.points(3, 0) = Decimal.Parse(stringReader.Split("Color")(0).Split("[")(4).Split(";")(0))
-                        myCourbe.points(3, 1) = Decimal.Parse(stringReader.Split("Color")(0).Split("[")(4).Split(";")(1).Replace("]", ""))
+                        myCourbe.points(0, 0) = Decimal.Parse(stringReader.Split("|")(0).Split("[")(1).Split(";")(0))
+                        myCourbe.points(0, 1) = Decimal.Parse(stringReader.Split("|")(0).Split("[")(1).Split(";")(1).Replace("]", ""))
+                        myCourbe.points(1, 0) = Decimal.Parse(stringReader.Split("|")(0).Split("[")(2).Split(";")(0))
+                        myCourbe.points(1, 1) = Decimal.Parse(stringReader.Split("|")(0).Split("[")(2).Split(";")(1).Replace("]", ""))
+                        myCourbe.points(2, 0) = Decimal.Parse(stringReader.Split("|")(0).Split("[")(3).Split(";")(0))
+                        myCourbe.points(2, 1) = Decimal.Parse(stringReader.Split("|")(0).Split("[")(3).Split(";")(1).Replace("]", ""))
+                        myCourbe.points(3, 0) = Decimal.Parse(stringReader.Split("|")(0).Split("[")(4).Split(";")(0))
+                        myCourbe.points(3, 1) = Decimal.Parse(stringReader.Split("|")(0).Split("[")(4).Split(";")(1).Replace("]", ""))
 
-                        myCourbe.segmentDefine = stringReader.Split("|")(1)
+                        myCourbe.segmentDefine = stringReader.Split("|")(2)
 
 
 
