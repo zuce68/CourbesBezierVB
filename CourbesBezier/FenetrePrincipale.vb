@@ -106,7 +106,7 @@ Public Class FenetrePrincipale
             myItem.Text = myItem.Tag.myPoints
 
             If pbCouleur.BackColor <> myItem.Tag.colorDefine Then
-                myItem.Tag.colorDefine = pbCouleur.BackColor
+                myItem.Tag.colorDefine = pbCouleur.BackColor.ToArgb()
             End If
 
             myItem.BackColor = myItem.Tag.colorDefine
@@ -292,7 +292,7 @@ Public Class FenetrePrincipale
 
 
         If pbCouleur.BackColor <> Color.White Then
-            myCourbe.colorDefine = pbCouleur.BackColor
+            myCourbe.colorDefine = pbCouleur.BackColor.ToArgb()
         Else
             myCourbe.colorDefine = randomColor()
         End If
