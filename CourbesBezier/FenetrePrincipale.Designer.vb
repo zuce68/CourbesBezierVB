@@ -69,7 +69,7 @@ Partial Class FenetrePrincipale
         Me.SaveAsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InfoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InfoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.gpPlan = New System.Windows.Forms.GroupBox()
         CType(Me.plan, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.nbSegements, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -83,7 +83,7 @@ Partial Class FenetrePrincipale
         CType(Me.Ydeb, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Xdeb, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
+        Me.gpPlan.SuspendLayout()
         Me.SuspendLayout()
         '
         'plan
@@ -537,23 +537,23 @@ Partial Class FenetrePrincipale
         Me.InfoToolStripMenuItem1.Size = New System.Drawing.Size(118, 26)
         Me.InfoToolStripMenuItem1.Text = "Info"
         '
-        'GroupBox2
+        'gpPlan
         '
-        Me.GroupBox2.Controls.Add(Me.lblMouse)
-        Me.GroupBox2.Controls.Add(Me.plan)
-        Me.GroupBox2.Location = New System.Drawing.Point(3, 32)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(420, 433)
-        Me.GroupBox2.TabIndex = 6
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Plan"
+        Me.gpPlan.Controls.Add(Me.lblMouse)
+        Me.gpPlan.Controls.Add(Me.plan)
+        Me.gpPlan.Location = New System.Drawing.Point(3, 32)
+        Me.gpPlan.Name = "gpPlan"
+        Me.gpPlan.Size = New System.Drawing.Size(420, 433)
+        Me.gpPlan.TabIndex = 6
+        Me.gpPlan.TabStop = False
+        Me.gpPlan.Text = "Plan"
         '
         'FenetrePrincipale
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(842, 477)
-        Me.Controls.Add(Me.GroupBox2)
+        Me.Controls.Add(Me.gpPlan)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -575,8 +575,8 @@ Partial Class FenetrePrincipale
         CType(Me.Xdeb, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
+        Me.gpPlan.ResumeLayout(False)
+        Me.gpPlan.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -624,7 +624,7 @@ Partial Class FenetrePrincipale
     Friend WithEvents InfoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents InfoToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents plan As PictureBox
-    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents gpPlan As GroupBox
     Friend WithEvents showAll As CheckBox
     Friend WithEvents LoadToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SaveAsToolStripMenuItem1 As ToolStripMenuItem

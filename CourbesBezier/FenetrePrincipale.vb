@@ -388,14 +388,14 @@ Public Class FenetrePrincipale
             Dim FileToSaveAs As String = System.IO.Path.Combine(My.Computer.FileSystem.SpecialDirectories.Temp, saveFileDialog1.SelectedPath + "\" + TimeString.Replace(":", "_") + ".jpg")
             Dim size As Size = plan.Size
             Dim btmp As New Bitmap(size.Width, size.Height)
-            Dim rect As New Rectangle(plan.Location, plan.Size)
-            FenetrePrincipale.ActiveForm.DrawToBitmap(btmp, rect)
+            Dim rect As New Rectangle(0, 0, size.Width, size.Height)
+            plan.DrawToBitmap(btmp, rect)
             btmp.Save(FileToSaveAs, System.Drawing.Imaging.ImageFormat.Jpeg)
             MessageBox.Show("Exportation terminée")
         End If
     End Sub
 
-    Private Sub GroupBox2_Enter(sender As Object, e As EventArgs) Handles GroupBox2.Enter
+    Private Sub GroupBox2_Enter(sender As Object, e As EventArgs) Handles gpPlan.Enter
 
     End Sub
 
@@ -468,6 +468,7 @@ Public Class FenetrePrincipale
                         Afficher(myCourbe)
                     Catch ex As Exception
                         MessageBox.Show("Import file error")
+                        Exit Sub
                     End Try
                 End If
             Loop Until stringReader Is Nothing
@@ -518,7 +519,6 @@ Public Class FenetrePrincipale
         Catch ex As Exception
             MessageBox.Show("Liste Vide")
         End Try
-
     End Sub
 
     Private Sub btnDeb_Click(sender As Object, e As EventArgs) Handles btnDeb.Click
