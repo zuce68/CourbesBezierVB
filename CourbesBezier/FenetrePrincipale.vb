@@ -476,7 +476,7 @@ Public Class FenetrePrincipale
         If pointData.SelectedItems.Count <> 0 Then
             Dim myItem As ListViewItem
             Dim indexes As ListView.SelectedIndexCollection = sender.SelectedIndices
-            Dim noSegments As Integer
+
             If indexes.Count > 0 Then
                 myItem = pointData.Items.Item(indexes(0))
 
