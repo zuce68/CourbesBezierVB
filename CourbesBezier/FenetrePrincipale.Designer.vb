@@ -419,9 +419,9 @@ Partial Class FenetrePrincipale
         Me.Label10.AutoSize = True
         Me.Label10.Location = New System.Drawing.Point(183, 129)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(139, 15)
+        Me.Label10.Size = New System.Drawing.Size(132, 15)
         Me.Label10.TabIndex = 8
-        Me.Label10.Text = "Nombre de segements :"
+        Me.Label10.Text = "Nombre de segments :"
         '
         'Label5
         '
@@ -509,19 +509,19 @@ Partial Class FenetrePrincipale
         'LoadToolStripMenuItem
         '
         Me.LoadToolStripMenuItem.Name = "LoadToolStripMenuItem"
-        Me.LoadToolStripMenuItem.Size = New System.Drawing.Size(203, 26)
+        Me.LoadToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
         Me.LoadToolStripMenuItem.Text = "Open"
         '
         'SaveAsToolStripMenuItem1
         '
         Me.SaveAsToolStripMenuItem1.Name = "SaveAsToolStripMenuItem1"
-        Me.SaveAsToolStripMenuItem1.Size = New System.Drawing.Size(203, 26)
+        Me.SaveAsToolStripMenuItem1.Size = New System.Drawing.Size(224, 26)
         Me.SaveAsToolStripMenuItem1.Text = "Save"
         '
         'SaveAsToolStripMenuItem
         '
         Me.SaveAsToolStripMenuItem.Name = "SaveAsToolStripMenuItem"
-        Me.SaveAsToolStripMenuItem.Size = New System.Drawing.Size(203, 26)
+        Me.SaveAsToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
         Me.SaveAsToolStripMenuItem.Text = "Exporter en JPEG"
         '
         'InfoToolStripMenuItem

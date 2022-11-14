@@ -385,7 +385,7 @@ Public Class FenetrePrincipale
     Private Sub SaveAsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveAsToolStripMenuItem.Click
         Dim saveFileDialog1 As New FolderBrowserDialog
         If saveFileDialog1.ShowDialog() = DialogResult.OK Then
-            Dim FileToSaveAs As String = System.IO.Path.Combine(My.Computer.FileSystem.SpecialDirectories.Temp, saveFileDialog1.SelectedPath + "\" + TimeString.Replace(":", "_") + ".jpg")
+            Dim FileToSaveAs As String = System.IO.Path.Combine(My.Computer.FileSystem.SpecialDirectories.Temp, saveFileDialog1.SelectedPath + "\" + DateTime.Now.ToString("dd_MM_yyyy") + "_" + TimeString.Replace(":", "_") + ".jpg")
             Dim size As Size = plan.Size
             Dim btmp As New Bitmap(size.Width, size.Height)
             Dim rect As New Rectangle(0, 0, size.Width, size.Height)
@@ -407,7 +407,7 @@ Public Class FenetrePrincipale
     Private Sub SaveAsToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles SaveAsToolStripMenuItem1.Click
         Dim saveFileDialog1 As New FolderBrowserDialog
         If saveFileDialog1.ShowDialog() = DialogResult.OK Then
-            Dim FileToSaveAs As String = System.IO.Path.Combine(My.Computer.FileSystem.SpecialDirectories.Temp, saveFileDialog1.SelectedPath + "\" + "Export_" + TimeString.Replace(":", "_") + ".txt")
+            Dim FileToSaveAs As String = System.IO.Path.Combine(My.Computer.FileSystem.SpecialDirectories.Temp, saveFileDialog1.SelectedPath + "\" + "Export_" + DateTime.Now.ToString("dd_MM_yyyy") + "_" + TimeString.Replace(":", "_") + ".txt")
             Dim fs As FileStream = File.Create(FileToSaveAs)
             For Each myItem As ListViewItem In pointData.Items
                 ' Add text to the file.
