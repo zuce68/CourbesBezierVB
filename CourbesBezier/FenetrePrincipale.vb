@@ -18,32 +18,36 @@ Public Class FenetrePrincipale
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles plan.Click
         Dim em As MouseEventArgs
         em = e
+        Try
+            If deb = True Then
+                Xdeb.Value = ((em.X - 204) * 0.2) / 39
+                Ydeb.Value = -(((em.Y - 202) * 0.2) / 39)
+                modifier.PerformClick()
+            End If
+            If fin = True Then
+                Xfin.Value = ((em.X - 204) * 0.2) / 39
+                Yfin.Value = -(((em.Y - 202) * 0.2) / 39)
+                modifier.PerformClick()
+            End If
+            If tdeb = True Then
+                Xtdeb.Value = ((em.X - 204) * 0.2) / 39
+                Ytdeb.Value = -(((em.Y - 202) * 0.2) / 39)
+                modifier.PerformClick()
+            End If
+            If tfin = True Then
+                Xtfin.Value = ((em.X - 204) * 0.2) / 39
+                Ytfin.Value = -(((em.Y - 202) * 0.2) / 39)
+                modifier.PerformClick()
+            End If
 
-        If deb = True Then
-            Xdeb.Value = ((em.X - 204) * 0.2) / 39
-            Ydeb.Value = -(((em.Y - 202) * 0.2) / 39)
-            modifier.PerformClick()
-        End If
-        If fin = True Then
-            Xfin.Value = ((em.X - 204) * 0.2) / 39
-            Yfin.Value = -(((em.Y - 202) * 0.2) / 39)
-            modifier.PerformClick()
-        End If
-        If tdeb = True Then
-            Xtdeb.Value = ((em.X - 204) * 0.2) / 39
-            Ytdeb.Value = -(((em.Y - 202) * 0.2) / 39)
-            modifier.PerformClick()
-        End If
-        If tfin = True Then
-            Xtfin.Value = ((em.X - 204) * 0.2) / 39
-            Ytfin.Value = -(((em.Y - 202) * 0.2) / 39)
-            modifier.PerformClick()
-        End If
+            deb = False
+            fin = False
+            tdeb = False
+            tfin = False
+        Catch ex As Exception
+            MessageBox.Show("Erreur d'affichage")
+        End Try
 
-        deb = False
-        fin = False
-        tdeb = False
-        tfin = False
     End Sub
 
     Private Sub plan_Paint(sender As Object, e As System.Windows.Forms.PaintEventArgs) Handles plan.Paint
