@@ -88,19 +88,16 @@ Partial Class FenetrePrincipale
         '
         'plan
         '
+        resources.ApplyResources(Me.plan, "plan")
         Me.plan.BackColor = System.Drawing.Color.White
-        Me.plan.BackgroundImage = CType(resources.GetObject("plan.BackgroundImage"), System.Drawing.Image)
-        Me.plan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.plan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.plan.Cursor = System.Windows.Forms.Cursors.Cross
-        Me.plan.Location = New System.Drawing.Point(6, 16)
         Me.plan.Name = "plan"
-        Me.plan.Size = New System.Drawing.Size(408, 406)
-        Me.plan.TabIndex = 0
         Me.plan.TabStop = False
         '
         'GroupBox1
         '
+        resources.ApplyResources(Me.GroupBox1, "GroupBox1")
         Me.GroupBox1.Controls.Add(Me.showAll)
         Me.GroupBox1.Controls.Add(Me.nbSegements)
         Me.GroupBox1.Controls.Add(Me.pbCouleur)
@@ -136,430 +133,300 @@ Partial Class FenetrePrincipale
         Me.GroupBox1.Controls.Add(Me.ajouter)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Location = New System.Drawing.Point(429, 32)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(401, 340)
-        Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Coordonées"
         '
         'showAll
         '
-        Me.showAll.AutoSize = True
-        Me.showAll.Location = New System.Drawing.Point(309, 181)
+        resources.ApplyResources(Me.showAll, "showAll")
         Me.showAll.Name = "showAll"
-        Me.showAll.Size = New System.Drawing.Size(96, 19)
-        Me.showAll.TabIndex = 31
-        Me.showAll.Text = "Tout afficher"
         Me.showAll.UseVisualStyleBackColor = True
         '
         'nbSegements
         '
-        Me.nbSegements.Location = New System.Drawing.Point(308, 126)
+        resources.ApplyResources(Me.nbSegements, "nbSegements")
         Me.nbSegements.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.nbSegements.Name = "nbSegements"
-        Me.nbSegements.Size = New System.Drawing.Size(93, 20)
-        Me.nbSegements.TabIndex = 30
         Me.nbSegements.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'pbCouleur
         '
+        resources.ApplyResources(Me.pbCouleur, "pbCouleur")
         Me.pbCouleur.BackColor = System.Drawing.Color.White
-        Me.pbCouleur.Location = New System.Drawing.Point(130, 152)
         Me.pbCouleur.Name = "pbCouleur"
-        Me.pbCouleur.Size = New System.Drawing.Size(31, 19)
-        Me.pbCouleur.TabIndex = 29
         Me.pbCouleur.TabStop = False
         '
         'btnCouleur
         '
-        Me.btnCouleur.Location = New System.Drawing.Point(33, 150)
+        resources.ApplyResources(Me.btnCouleur, "btnCouleur")
         Me.btnCouleur.Name = "btnCouleur"
-        Me.btnCouleur.Size = New System.Drawing.Size(75, 23)
-        Me.btnCouleur.TabIndex = 28
-        Me.btnCouleur.Text = "Couleur"
         Me.btnCouleur.UseVisualStyleBackColor = True
         '
         'lblLongueur
         '
-        Me.lblLongueur.Enabled = False
-        Me.lblLongueur.Location = New System.Drawing.Point(93, 126)
+        resources.ApplyResources(Me.lblLongueur, "lblLongueur")
         Me.lblLongueur.Name = "lblLongueur"
-        Me.lblLongueur.Size = New System.Drawing.Size(74, 20)
-        Me.lblLongueur.TabIndex = 27
-        Me.lblLongueur.Text = "0"
         '
         'Label11
         '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(34, 129)
+        resources.ApplyResources(Me.Label11, "Label11")
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(69, 15)
-        Me.Label11.TabIndex = 26
-        Me.Label11.Text = "Longueur : "
         '
         'btnTfin
         '
-        Me.btnTfin.Location = New System.Drawing.Point(326, 94)
+        resources.ApplyResources(Me.btnTfin, "btnTfin")
         Me.btnTfin.Name = "btnTfin"
-        Me.btnTfin.Size = New System.Drawing.Size(75, 23)
-        Me.btnTfin.TabIndex = 25
-        Me.btnTfin.Text = "TFin"
         Me.btnTfin.UseVisualStyleBackColor = True
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(326, 97)
+        resources.ApplyResources(Me.Button4, "Button4")
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(75, 23)
-        Me.Button4.TabIndex = 25
-        Me.Button4.Text = "Button1"
         Me.Button4.UseVisualStyleBackColor = True
         '
         'btnTdeb
         '
-        Me.btnTdeb.Location = New System.Drawing.Point(326, 68)
+        resources.ApplyResources(Me.btnTdeb, "btnTdeb")
         Me.btnTdeb.Name = "btnTdeb"
-        Me.btnTdeb.Size = New System.Drawing.Size(75, 23)
-        Me.btnTdeb.TabIndex = 25
-        Me.btnTdeb.Text = "TDébut"
         Me.btnTdeb.UseVisualStyleBackColor = True
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(326, 72)
+        resources.ApplyResources(Me.Button3, "Button3")
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
-        Me.Button3.TabIndex = 25
-        Me.Button3.Text = "Button1"
         Me.Button3.UseVisualStyleBackColor = True
         '
         'btnFin
         '
-        Me.btnFin.Location = New System.Drawing.Point(326, 42)
+        resources.ApplyResources(Me.btnFin, "btnFin")
         Me.btnFin.Name = "btnFin"
-        Me.btnFin.Size = New System.Drawing.Size(75, 23)
-        Me.btnFin.TabIndex = 25
-        Me.btnFin.Text = "Fin"
         Me.btnFin.UseVisualStyleBackColor = True
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(326, 45)
+        resources.ApplyResources(Me.Button2, "Button2")
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 25
-        Me.Button2.Text = "Button1"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'btnDeb
         '
-        Me.btnDeb.Location = New System.Drawing.Point(326, 16)
+        resources.ApplyResources(Me.btnDeb, "btnDeb")
         Me.btnDeb.Name = "btnDeb"
-        Me.btnDeb.Size = New System.Drawing.Size(75, 23)
-        Me.btnDeb.TabIndex = 25
-        Me.btnDeb.Text = "Début"
         Me.btnDeb.UseVisualStyleBackColor = True
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(326, 17)
+        resources.ApplyResources(Me.Button1, "Button1")
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 25
-        Me.Button1.Text = "Button1"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'pointData
         '
+        resources.ApplyResources(Me.pointData, "pointData")
         Me.pointData.FullRowSelect = True
         Me.pointData.HideSelection = False
-        Me.pointData.Location = New System.Drawing.Point(36, 206)
         Me.pointData.MultiSelect = False
         Me.pointData.Name = "pointData"
-        Me.pointData.Size = New System.Drawing.Size(359, 128)
-        Me.pointData.TabIndex = 4
         Me.pointData.UseCompatibleStateImageBehavior = False
         '
         'Ytfin
         '
+        resources.ApplyResources(Me.Ytfin, "Ytfin")
         Me.Ytfin.DecimalPlaces = 2
         Me.Ytfin.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.Ytfin.Location = New System.Drawing.Point(221, 100)
         Me.Ytfin.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.Ytfin.Minimum = New Decimal(New Integer() {1, 0, 0, -2147483648})
         Me.Ytfin.Name = "Ytfin"
-        Me.Ytfin.Size = New System.Drawing.Size(99, 20)
-        Me.Ytfin.TabIndex = 24
         '
         'Xtfin
         '
+        resources.ApplyResources(Me.Xtfin, "Xtfin")
         Me.Xtfin.DecimalPlaces = 2
         Me.Xtfin.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.Xtfin.Location = New System.Drawing.Point(68, 98)
         Me.Xtfin.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.Xtfin.Minimum = New Decimal(New Integer() {1, 0, 0, -2147483648})
         Me.Xtfin.Name = "Xtfin"
-        Me.Xtfin.Size = New System.Drawing.Size(99, 20)
-        Me.Xtfin.TabIndex = 23
         '
         'Yfin
         '
+        resources.ApplyResources(Me.Yfin, "Yfin")
         Me.Yfin.DecimalPlaces = 2
         Me.Yfin.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.Yfin.Location = New System.Drawing.Point(221, 48)
         Me.Yfin.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.Yfin.Minimum = New Decimal(New Integer() {1, 0, 0, -2147483648})
         Me.Yfin.Name = "Yfin"
-        Me.Yfin.Size = New System.Drawing.Size(99, 20)
-        Me.Yfin.TabIndex = 22
         '
         'Xtdeb
         '
+        resources.ApplyResources(Me.Xtdeb, "Xtdeb")
         Me.Xtdeb.DecimalPlaces = 2
         Me.Xtdeb.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.Xtdeb.Location = New System.Drawing.Point(68, 72)
         Me.Xtdeb.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.Xtdeb.Minimum = New Decimal(New Integer() {1, 0, 0, -2147483648})
         Me.Xtdeb.Name = "Xtdeb"
-        Me.Xtdeb.Size = New System.Drawing.Size(99, 20)
-        Me.Xtdeb.TabIndex = 21
         '
         'Ytdeb
         '
+        resources.ApplyResources(Me.Ytdeb, "Ytdeb")
         Me.Ytdeb.DecimalPlaces = 2
         Me.Ytdeb.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.Ytdeb.Location = New System.Drawing.Point(221, 74)
         Me.Ytdeb.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.Ytdeb.Minimum = New Decimal(New Integer() {1, 0, 0, -2147483648})
         Me.Ytdeb.Name = "Ytdeb"
-        Me.Ytdeb.Size = New System.Drawing.Size(99, 20)
-        Me.Ytdeb.TabIndex = 20
         '
         'Xfin
         '
+        resources.ApplyResources(Me.Xfin, "Xfin")
         Me.Xfin.DecimalPlaces = 2
         Me.Xfin.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.Xfin.Location = New System.Drawing.Point(68, 46)
         Me.Xfin.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.Xfin.Minimum = New Decimal(New Integer() {1, 0, 0, -2147483648})
         Me.Xfin.Name = "Xfin"
-        Me.Xfin.Size = New System.Drawing.Size(99, 20)
-        Me.Xfin.TabIndex = 19
         '
         'Ydeb
         '
+        resources.ApplyResources(Me.Ydeb, "Ydeb")
         Me.Ydeb.DecimalPlaces = 2
         Me.Ydeb.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.Ydeb.Location = New System.Drawing.Point(221, 20)
         Me.Ydeb.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.Ydeb.Minimum = New Decimal(New Integer() {1, 0, 0, -2147483648})
         Me.Ydeb.Name = "Ydeb"
-        Me.Ydeb.Size = New System.Drawing.Size(99, 20)
-        Me.Ydeb.TabIndex = 18
         '
         'Xdeb
         '
+        resources.ApplyResources(Me.Xdeb, "Xdeb")
         Me.Xdeb.DecimalPlaces = 2
         Me.Xdeb.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.Xdeb.Location = New System.Drawing.Point(68, 20)
         Me.Xdeb.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.Xdeb.Minimum = New Decimal(New Integer() {1, 0, 0, -2147483648})
         Me.Xdeb.Name = "Xdeb"
-        Me.Xdeb.Size = New System.Drawing.Size(99, 20)
-        Me.Xdeb.TabIndex = 17
         '
         'Label8
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(183, 48)
+        resources.ApplyResources(Me.Label8, "Label8")
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(27, 15)
-        Me.Label8.TabIndex = 15
-        Me.Label8.Text = "Yfin"
         '
         'Label9
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(34, 48)
+        resources.ApplyResources(Me.Label9, "Label9")
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(28, 15)
-        Me.Label9.TabIndex = 16
-        Me.Label9.Text = "Xfin"
         '
         'Label6
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(183, 74)
+        resources.ApplyResources(Me.Label6, "Label6")
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(38, 15)
-        Me.Label6.TabIndex = 11
-        Me.Label6.Text = "Ytdeb"
         '
         'Label7
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(33, 74)
+        resources.ApplyResources(Me.Label7, "Label7")
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(39, 15)
-        Me.Label7.TabIndex = 12
-        Me.Label7.Text = "Xtdeb"
         '
         'Label4
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(183, 100)
+        resources.ApplyResources(Me.Label4, "Label4")
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(30, 15)
-        Me.Label4.TabIndex = 7
-        Me.Label4.Text = "Ytfin"
         '
         'Label10
         '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(183, 129)
+        resources.ApplyResources(Me.Label10, "Label10")
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(132, 15)
-        Me.Label10.TabIndex = 8
-        Me.Label10.Text = "Nombre de segments :"
         '
         'Label5
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(34, 100)
+        resources.ApplyResources(Me.Label5, "Label5")
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(31, 15)
-        Me.Label5.TabIndex = 8
-        Me.Label5.Text = "Xtfin"
         '
         'supprimer
         '
-        Me.supprimer.Location = New System.Drawing.Point(195, 177)
+        resources.ApplyResources(Me.supprimer, "supprimer")
         Me.supprimer.Name = "supprimer"
-        Me.supprimer.Size = New System.Drawing.Size(75, 23)
-        Me.supprimer.TabIndex = 4
-        Me.supprimer.Text = "Supprimer"
         Me.supprimer.UseVisualStyleBackColor = True
-        Me.supprimer.Visible = False
         '
         'modifier
         '
-        Me.modifier.Location = New System.Drawing.Point(114, 177)
+        resources.ApplyResources(Me.modifier, "modifier")
         Me.modifier.Name = "modifier"
-        Me.modifier.Size = New System.Drawing.Size(75, 23)
-        Me.modifier.TabIndex = 4
-        Me.modifier.Text = "Modifier"
         Me.modifier.UseVisualStyleBackColor = True
-        Me.modifier.Visible = False
         '
         'ajouter
         '
-        Me.ajouter.Location = New System.Drawing.Point(33, 177)
+        resources.ApplyResources(Me.ajouter, "ajouter")
         Me.ajouter.Name = "ajouter"
-        Me.ajouter.Size = New System.Drawing.Size(75, 23)
-        Me.ajouter.TabIndex = 4
-        Me.ajouter.Text = "Ajouter"
         Me.ajouter.UseVisualStyleBackColor = True
         '
         'Label3
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(183, 22)
+        resources.ApplyResources(Me.Label3, "Label3")
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(35, 15)
-        Me.Label3.TabIndex = 3
-        Me.Label3.Text = "Ydeb"
         '
         'Label2
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(34, 22)
+        resources.ApplyResources(Me.Label2, "Label2")
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(36, 15)
-        Me.Label2.TabIndex = 3
-        Me.Label2.Text = "Xdeb"
         '
         'lblMouse
         '
-        Me.lblMouse.AutoSize = True
+        resources.ApplyResources(Me.lblMouse, "lblMouse")
         Me.lblMouse.BackColor = System.Drawing.Color.White
-        Me.lblMouse.Location = New System.Drawing.Point(9, 27)
         Me.lblMouse.Name = "lblMouse"
-        Me.lblMouse.Size = New System.Drawing.Size(32, 15)
-        Me.lblMouse.TabIndex = 4
-        Me.lblMouse.Text = "(0,0)"
         '
         'MenuStrip1
         '
+        resources.ApplyResources(Me.MenuStrip1, "MenuStrip1")
         Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.InfoToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(842, 28)
-        Me.MenuStrip1.TabIndex = 5
-        Me.MenuStrip1.Text = "MenuStrip1"
         '
         'ToolStripMenuItem1
         '
+        resources.ApplyResources(Me.ToolStripMenuItem1, "ToolStripMenuItem1")
         Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoadToolStripMenuItem, Me.SaveAsToolStripMenuItem1, Me.SaveAsToolStripMenuItem})
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(46, 24)
-        Me.ToolStripMenuItem1.Text = "File"
         '
         'LoadToolStripMenuItem
         '
+        resources.ApplyResources(Me.LoadToolStripMenuItem, "LoadToolStripMenuItem")
         Me.LoadToolStripMenuItem.Name = "LoadToolStripMenuItem"
-        Me.LoadToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
-        Me.LoadToolStripMenuItem.Text = "Open"
         '
         'SaveAsToolStripMenuItem1
         '
+        resources.ApplyResources(Me.SaveAsToolStripMenuItem1, "SaveAsToolStripMenuItem1")
         Me.SaveAsToolStripMenuItem1.Name = "SaveAsToolStripMenuItem1"
-        Me.SaveAsToolStripMenuItem1.Size = New System.Drawing.Size(224, 26)
-        Me.SaveAsToolStripMenuItem1.Text = "Save"
         '
         'SaveAsToolStripMenuItem
         '
+        resources.ApplyResources(Me.SaveAsToolStripMenuItem, "SaveAsToolStripMenuItem")
         Me.SaveAsToolStripMenuItem.Name = "SaveAsToolStripMenuItem"
-        Me.SaveAsToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
-        Me.SaveAsToolStripMenuItem.Text = "Exporter en JPEG"
         '
         'InfoToolStripMenuItem
         '
+        resources.ApplyResources(Me.InfoToolStripMenuItem, "InfoToolStripMenuItem")
         Me.InfoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InfoToolStripMenuItem1})
         Me.InfoToolStripMenuItem.Name = "InfoToolStripMenuItem"
-        Me.InfoToolStripMenuItem.Size = New System.Drawing.Size(58, 24)
-        Me.InfoToolStripMenuItem.Text = "More"
         '
         'InfoToolStripMenuItem1
         '
+        resources.ApplyResources(Me.InfoToolStripMenuItem1, "InfoToolStripMenuItem1")
         Me.InfoToolStripMenuItem1.Name = "InfoToolStripMenuItem1"
-        Me.InfoToolStripMenuItem1.Size = New System.Drawing.Size(118, 26)
-        Me.InfoToolStripMenuItem1.Text = "Info"
         '
         'gpPlan
         '
+        resources.ApplyResources(Me.gpPlan, "gpPlan")
         Me.gpPlan.Controls.Add(Me.lblMouse)
         Me.gpPlan.Controls.Add(Me.plan)
-        Me.gpPlan.Location = New System.Drawing.Point(3, 32)
         Me.gpPlan.Name = "gpPlan"
-        Me.gpPlan.Size = New System.Drawing.Size(420, 433)
-        Me.gpPlan.TabIndex = 6
         Me.gpPlan.TabStop = False
-        Me.gpPlan.Text = "Plan"
         '
         'FenetrePrincipale
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(842, 477)
         Me.Controls.Add(Me.gpPlan)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.MenuStrip1)
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "FenetrePrincipale"
-        Me.Text = "Courbe de Bézier"
         CType(Me.plan, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

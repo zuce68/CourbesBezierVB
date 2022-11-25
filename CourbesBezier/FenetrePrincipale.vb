@@ -45,7 +45,7 @@ Public Class FenetrePrincipale
             tdeb = False
             tfin = False
         Catch ex As Exception
-            MessageBox.Show("Erreur d'affichage")
+            MessageBox.Show("Veuillez respecter le référentiel '-1;1'")
         End Try
 
     End Sub
